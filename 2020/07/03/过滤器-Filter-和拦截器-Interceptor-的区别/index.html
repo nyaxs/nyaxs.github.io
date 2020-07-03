@@ -20,17 +20,22 @@
     <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
     
     <meta name="description" content="">
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Hello">
-<meta property="og:url" content="http://yoursite.com/archives/2020/07/index.html">
+    <meta name="description" content="过滤器(Filter)和拦截器(Interceptor)的区别Filter介绍Filter可以认为是Servlet的一种“加强版”，它主要用于对用户请求进行预处理，也可以对HttpServletResponse进行后处理，是个典型的处理链。 Filter也可以对用户请求生成响应，这一点与Servlet相同，但实际上很少会使用Filter向用户请求生成响应。 使用Filter完整的流程是：Filte">
+<meta property="og:type" content="article">
+<meta property="og:title" content="过滤器(Filter)和拦截器(Interceptor)的区别">
+<meta property="og:url" content="http://yoursite.com/2020/07/03/%E8%BF%87%E6%BB%A4%E5%99%A8-Filter-%E5%92%8C%E6%8B%A6%E6%88%AA%E5%99%A8-Interceptor-%E7%9A%84%E5%8C%BA%E5%88%AB/index.html">
 <meta property="og:site_name" content="Hello">
+<meta property="og:description" content="过滤器(Filter)和拦截器(Interceptor)的区别Filter介绍Filter可以认为是Servlet的一种“加强版”，它主要用于对用户请求进行预处理，也可以对HttpServletResponse进行后处理，是个典型的处理链。 Filter也可以对用户请求生成响应，这一点与Servlet相同，但实际上很少会使用Filter向用户请求生成响应。 使用Filter完整的流程是：Filte">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-07-03T02:23:50.000Z">
+<meta property="article:modified_time" content="2020-07-03T02:30:38.998Z">
 <meta property="article:author" content="Nyaxs">
+<meta property="article:tag" content="web">
 <meta name="twitter:card" content="summary">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     
-    <title>Nyaxs Product</title>
+    <title>过滤器(Filter)和拦截器(Interceptor)的区别 · Nyaxs Product</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -211,12 +216,23 @@
 <meta name="generator" content="Hexo 4.2.1"></head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >Nyaxs Product</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">过滤器(Filter)和拦截器(Interceptor)的区别</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>Nyaxs Product</a>
 </header>
@@ -228,24 +244,74 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(https://source.unsplash.com/random)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            过滤器(Filter)和拦截器(Interceptor)的区别
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "web">web</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count word-count">1.3k</span>Reading time: <span class="post-count reading-time">4 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2020/07/03</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -346,137 +412,98 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/07/03/%E8%BF%87%E6%BB%A4%E5%99%A8-Filter-%E5%92%8C%E6%8B%A6%E6%88%AA%E5%99%A8-Interceptor-%E7%9A%84%E5%8C%BA%E5%88%AB/" >
-            
-                <span>过滤器(Filter)和拦截器(Interceptor)的区别</span>
-        </a>
-        <div class="abstract-content">
-            过滤器(Filter)和拦截器(Interceptor)的区别Filter介绍Filter可以认为是Servlet的一种“加强版”，它主要用于对用户请求进行预处理，也可以对HttpServletResponse进行后处理，是个典型的处理链。
-Filter也可以对用户请求生成响应，这一点与Servlet相同，但实际上很少会使用Filter向用户请求生成响应。
-使用Filter完整的流程是：Filter对用户请求进行预处理，接着将请求交给Servlet进行预处理并生成响应，最后Filter再对服务器响应进行后处理。
-Filter有如下几个用处
-在HttpServletRequest到达Ser...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/03</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "web">web</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/07/02/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E8%83%BD%E5%88%9B%E5%BB%BA%E6%B3%9B%E5%9E%8B%E6%95%B0%E7%BB%84/" >
-            
-                <span>为什么不能创建泛型数组</span>
-        </a>
-        <div class="abstract-content">
-            为什么不能创建泛型数组Situation我在将排序算法改造成泛型方法时，试图创建一个新的泛型数组。却出现编译错误提示…
-123T[] b = new T[a.length];//Type parameter 'T' cannot be instantiated directly
+            <main class="main post-page">
+    <article class="article-entry">
+        <h2 id="过滤器-Filter-和拦截器-Interceptor-的区别"><a href="#过滤器-Filter-和拦截器-Interceptor-的区别" class="headerlink" title="过滤器(Filter)和拦截器(Interceptor)的区别"></a>过滤器(Filter)和拦截器(Interceptor)的区别</h2><h3 id="Filter介绍"><a href="#Filter介绍" class="headerlink" title="Filter介绍"></a>Filter介绍</h3><p>Filter可以认为是Servlet的一种“加强版”，它主要用于对用户请求进行预处理，也可以对HttpServletResponse进行后处理，是个典型的处理链。</p>
+<p>Filter也可以对用户请求生成响应，这一点与Servlet相同，但实际上很少会使用Filter向用户请求生成响应。</p>
+<p>使用Filter完整的流程是：Filter对用户请求进行预处理，接着将请求交给Servlet进行预处理并生成响应，最后Filter再对服务器响应进行后处理。</p>
+<h4 id="Filter有如下几个用处"><a href="#Filter有如下几个用处" class="headerlink" title="Filter有如下几个用处"></a>Filter有如下几个用处</h4><ul>
+<li><p>在HttpServletRequest到达Servlet之前，拦截客户的HttpServletRequest。</p>
+</li>
+<li><p>根据需要检查HttpServletRequest，也可以修改HttpServletRequest头和数据。</p>
+</li>
+<li><p>在HttpServletResponse到达客户端之前，拦截HttpServletResponse。<br>根据需要检查HttpServletResponse，也可以修改HttpServletResponse头和数据。</p>
+</li>
+</ul>
+<h4 id="Filter有如下几个种类。"><a href="#Filter有如下几个种类。" class="headerlink" title="Filter有如下几个种类。"></a>Filter有如下几个种类。</h4><ul>
+<li>用户授权的Filter：Filter负责检查用户请求，根据请求过滤用户非法请求。<br>日志Filter：详细记录某些特殊的用户请求。</li>
+<li>负责解码的Filter:包括对非标准编码的请求解码。<br>能改变XML内容的XSLT Filter等。</li>
+<li>Filter可以负责拦截多个请求或响应；一个请求或响应也可以被多个Filter拦截。<h4 id="创建一个Filter只需两个步骤"><a href="#创建一个Filter只需两个步骤" class="headerlink" title="创建一个Filter只需两个步骤"></a>创建一个Filter只需两个步骤</h4></li>
+</ul>
+<ol>
+<li>创建Filter处理类</li>
+<li>web.xml文件中配置Filter<h3 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h3><ul>
+<li>创建Filter必须实现javax.servlet.Filter接口，在该接口中定义了如下三个方法。<ul>
+<li>void init(FilterConfig config):用于完成Filter的初始化。</li>
+<li>void destory():用于Filter销毁前，完成某些资源的回收。</li>
+<li>void doFilter(ServletRequest request,ServletResponse response,FilterChain chain):实现过滤功能，该方法就是对每个请求及响应增加的额外处理。<br>该方法可以实现对用户请求进行预处理(ServletRequest request)，也可实现对服务器响应进行后处理(ServletResponse response)—它们的分界线为是否调用了chain.doFilter(),执行该方法之前，即对用户请求进行预处理；执行该方法之后，即对服务器响应进行后处理。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="Interceptor介绍"><a href="#Interceptor介绍" class="headerlink" title="Interceptor介绍"></a>Interceptor介绍</h3><p>拦截器，在AOP(Aspect-Oriented Programming)中用于在某个方法或字段被访问之前，进行拦截，然后在之前或之后加入某些操作。拦截是AOP的一种实现策略。</p>
+<p>在WebWork的中文文档的解释为—拦截器是动态拦截Action调用的对象。它提供了一种机制可以使开发者可以定义在一个Action执行的前后执行的代码，也可以在一个Action执行前阻止其执行。同时也提供了一种可以提取Action中可重用的部分的方式。</p>
+<blockquote>
+<p>拦截器将Action共用的行为独立出来，在Action执行前后执行。这也就是我们所说的AOP，它是分散关注的编程方法，它将通用需求功能从不相关类之中分离出来；同时，能够共享一个行为，一旦行为发生变化，不必修改很多类，只要修改这个行为就可以。<br>拦截器将很多功能从我们的Action中独立出来，大量减少了我们Action的代码，独立出来的行为就有很好的重用性。<br>当你提交对Action(默认是.action结尾的url)的请求时，ServletDispatcher会根据你的请求，去调度并执行相应的Action。在Action执行之前，调用被Interceptor截取，Interceptor在Action执行前后执行。<br>创建Interceptor必须实现com.opensymphony.xwork2.interceptor.Interceptor接口，该接口定义了如下三个方法。</p>
+</blockquote>
+<ul>
+<li>void init():在该拦截器被实例化之后，在该拦截器执行拦截之前，系统将回调该方法。对于每个拦截器而言，其init()方法只执行一次。因此，该方法的方法体主要用于初始化资源。</li>
+<li>void destory():该方法与init()方法对应。在拦截器实例被销毁之前，系统将回调该拦截器的destory方法，该方法用于销毁在init方法里打开的资源。</li>
+<li>String intercept(ActionInvocation invocation):该方法是用户需要实现的拦截动作。就像Action的execute方法一样。intercept方法会返回一个字符串作为逻辑视图。如果该方法直接返回了一个字符串，系统会将跳转到该逻辑视图对应的实际视图资源，不会调用被拦截的Action。该方法的ActionInvocation参数包含了被拦截的Action的引用，可以通过调用该参数的invoke方法，将控制权转给下一个拦截器，或者转给Action的execute方法(如果该拦截器后没有其他拦截器，则直接执行Action的execute方法)。</li>
+</ul>
+<h3 id="Filter和Interceptor的区别"><a href="#Filter和Interceptor的区别" class="headerlink" title="Filter和Interceptor的区别"></a>Filter和Interceptor的区别</h3><ul>
+<li>Filter是基于函数回调的，而Interceptor则是基于Java反射的。</li>
+<li>Filter依赖于Servlet容器，而Interceptor不依赖于Servlet容器。</li>
+<li>Filter对几乎所有的请求起作用，而Interceptor只能对action请求起作用。</li>
+<li>Interceptor可以访问Action的上下文，值栈里的对象，而Filter不能。</li>
+<li>在action的生命周期里，Interceptor可以被多次调用，而Filter只能在容器初始化时调用一次。<h3 id="Filter和Interceptor的执行顺序"><a href="#Filter和Interceptor的执行顺序" class="headerlink" title="Filter和Interceptor的执行顺序"></a>Filter和Interceptor的执行顺序</h3>过滤前–拦截前–action执行–拦截后–过滤后</li>
+</ul>
+<p><em>引用自：(<a href="https://www.cnblogs.com/luoyun/archive/2013/01/04/2844274.html" target="_blank" rel="noopener">https://www.cnblogs.com/luoyun/archive/2013/01/04/2844274.html</a>)</em></p>
 
-分析在Java中，数组必须明确知道内部元素的类型，而且编译器会”记住“这个类型，每次往数组里插入新元素都会进行类型检查，不匹配会抛出java.lang.ArrayStoreException错误。如果试图直接创建泛型数组，写成这样：
-1HashMap&lt;Integer&gt; map = new HashM...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/02</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Java">Java</a>
-    
-</div>
-            
-        </div>
     </article>
+    <!-- license  -->
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/07/02/Integer%E5%92%8Cint%E7%9A%84%E5%8C%BA%E5%88%AB/" >
-            
-                <span>Integer和int的区别</span>
-        </a>
-        <div class="abstract-content">
-            Integer 和 int 的区别
-Integer是int的包装类，int则是java的一种基本数据类型
-Integer变量必须实例化后才能使用，而int变量不需要
-Integer实际是对象的引用，当new一个Integer时，实际上是生成一个指针指向此对象；而int则是直接存储数据值
-Integer的默认值是null，int的默认值是0
-
-关于Integer和int的比较
-由于Integer变量实际上是对一个Integer对象的引用，所以两个通过new生成的Integer变量永远是不相等的（因为new生成的是两个对象，其内存地址不同）。
-Integer i = new Integer(...
+        <div class="license-wrapper">
+            <p>Author：<a href="http://yoursite.com">Nyaxs</a>
+            <p>原文链接：<a href="http://yoursite.com/2020/07/03/%E8%BF%87%E6%BB%A4%E5%99%A8-Filter-%E5%92%8C%E6%8B%A6%E6%88%AA%E5%99%A8-Interceptor-%E7%9A%84%E5%8C%BA%E5%88%AB/">http://yoursite.com/2020/07/03/%E8%BF%87%E6%BB%A4%E5%99%A8-Filter-%E5%92%8C%E6%8B%A6%E6%88%AA%E5%99%A8-Interceptor-%E7%9A%84%E5%8C%BA%E5%88%AB/</a>
+            <p>发表日期：<a href="http://yoursite.com/2020/07/03/%E8%BF%87%E6%BB%A4%E5%99%A8-Filter-%E5%92%8C%E6%8B%A6%E6%88%AA%E5%99%A8-Interceptor-%E7%9A%84%E5%8C%BA%E5%88%AB/">July 3rd 2020, 10:23:50 am</a>
+            <p>更新日期：<a href="http://yoursite.com/2020/07/03/%E8%BF%87%E6%BB%A4%E5%99%A8-Filter-%E5%92%8C%E6%8B%A6%E6%88%AA%E5%99%A8-Interceptor-%E7%9A%84%E5%8C%BA%E5%88%AB/">July 3rd 2020, 10:30:38 am</a>
+            <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/02</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Java">Java</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/07/02/hello-world/" >
-            
-                <span>Hello World</span>
-        </a>
-        <div class="abstract-content">
-            Hello World!
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/02</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2020/07/02/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E8%83%BD%E5%88%9B%E5%BB%BA%E6%B3%9B%E5%9E%8B%E6%95%B0%E7%BB%84/" title= "为什么不能创建泛型数组">
+                    <div class="prevTitle">为什么不能创建泛型数组</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- gitalk评论 -->
+
+    <!-- utteranc评论 -->
+
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -561,6 +588,24 @@ Integer i = new Integer(...
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#过滤器-Filter-和拦截器-Interceptor-的区别"><span class="toc-number">1.</span> <span class="toc-text">过滤器(Filter)和拦截器(Interceptor)的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Filter介绍"><span class="toc-number">1.1.</span> <span class="toc-text">Filter介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Filter有如下几个用处"><span class="toc-number">1.1.1.</span> <span class="toc-text">Filter有如下几个用处</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Filter有如下几个种类。"><span class="toc-number">1.1.2.</span> <span class="toc-text">Filter有如下几个种类。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#创建一个Filter只需两个步骤"><span class="toc-number">1.1.3.</span> <span class="toc-text">创建一个Filter只需两个步骤</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#生命周期"><span class="toc-number">1.2.</span> <span class="toc-text">生命周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Interceptor介绍"><span class="toc-number">1.3.</span> <span class="toc-text">Interceptor介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Filter和Interceptor的区别"><span class="toc-number">1.4.</span> <span class="toc-text">Filter和Interceptor的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Filter和Interceptor的执行顺序"><span class="toc-number">1.5.</span> <span class="toc-text">Filter和Interceptor的执行顺序</span></a></li></ol></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -729,6 +774,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
