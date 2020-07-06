@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta property="og:type" content="website">
 <meta property="og:title" content="Hello">
-<meta property="og:url" content="http://yoursite.com/tags/Java/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/java/index.html">
 <meta property="og:site_name" content="Hello">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="Nyaxs">
@@ -354,64 +354,30 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2020/07/02/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E8%83%BD%E5%88%9B%E5%BB%BA%E6%B3%9B%E5%9E%8B%E6%95%B0%E7%BB%84/" >
+        <a class="abstract-title" href = "/2020/07/06/%E4%BB%80%E4%B9%88%E6%98%AFServlet/" >
             
-                <span>为什么不能创建泛型数组</span>
+                <span>什么是Servlet</span>
         </a>
         <div class="abstract-content">
-            为什么不能创建泛型数组Situation我在将排序算法改造成泛型方法时，试图创建一个新的泛型数组。却出现编译错误提示…
-123T[] b = new T[a.length];//Type parameter 'T' cannot be instantiated directly
+            事实上，servlet就是一个Java接口，interface!打开idea，ctrl + shift + n，搜索servlet，就可以看到是一个只有5个方法的interface!
 
-分析在Java中，数组必须明确知道内部元素的类型，而且编译器会”记住“这个类型，每次往数组里插入新元素都会进行类型检查，不匹配会抛出java.lang.ArrayStoreException错误。如果试图直接创建泛型数组，写成这样：
-1HashMap&lt;Integer&gt; map = new HashM...
+
+所以，网络协议、http什么的，servlet根本不管！也管不着！那servlet是干嘛的？很简单，接口的作用是什么？规范呗！servlet接口定义的是一套处理网络请求的规范，所有实现servlet的类，都需要实现它那五个方法，其中最主要的是两个生命周期方法 init()和destroy()，还有一个处理请求的service()，也就是说，所有实现servlet接口的类，或者说，所有想要处理网络请求的类...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/02</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/06</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Java">Java</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "web">web</a>
     
-</div>
-            
-        </div>
-    </article>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "java">java</a>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/07/02/Integer%E5%92%8Cint%E7%9A%84%E5%8C%BA%E5%88%AB/" >
-            
-                <span>Integer和int的区别</span>
-        </a>
-        <div class="abstract-content">
-            Integer 和 int 的区别
-Integer是int的包装类，int则是java的一种基本数据类型
-Integer变量必须实例化后才能使用，而int变量不需要
-Integer实际是对象的引用，当new一个Integer时，实际上是生成一个指针指向此对象；而int则是直接存储数据值
-Integer的默认值是null，int的默认值是0
-
-关于Integer和int的比较
-由于Integer变量实际上是对一个Integer对象的引用，所以两个通过new生成的Integer变量永远是不相等的（因为new生成的是两个对象，其内存地址不同）。
-Integer i = new Integer(...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/02</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Java">Java</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "servlet">servlet</a>
     
 </div>
             
@@ -637,40 +603,9 @@ Integer i = new Integer(...
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 10
+        Total : 11
         </div>
         <!-- search  -->
         
@@ -691,12 +626,7 @@ Integer i = new Integer(...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/04</span><a class="archive-post-title" href= "/2020/07/04/%E8%AE%A4%E8%AF%86JVM%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%8CJava%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F/" >认识JVM（一），Java内存区域</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">07/04</span><a class="archive-post-title" href= "/2020/07/04/REST%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%8C%E5%A6%82%E4%BD%95%E5%BA%94%E7%94%A8/" >REST是什么，如何应用</a>
+            <span class="archive-post-date">07/06</span><a class="archive-post-title" href= "/2020/07/06/%E4%BB%80%E4%B9%88%E6%98%AFServlet/" >什么是Servlet</a>
         </li>
     
     
@@ -706,8 +636,41 @@ Integer i = new Integer(...
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">07/04</span><a class="archive-post-title" href= "/2020/07/04/REST%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%8C%E5%A6%82%E4%BD%95%E5%BA%94%E7%94%A8/" >REST是什么，如何应用</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/04</span><a class="archive-post-title" href= "/2020/07/04/%E8%AE%A4%E8%AF%86JVM%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%8CJava%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F/" >认识JVM（一），Java内存区域</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">07/04</span><a class="archive-post-title" href= "/2020/07/04/%E8%AE%A4%E8%AF%86%E5%BE%AE%E6%9C%8D%E5%8A%A1%EF%BC%88%E4%B8%80%EF%BC%89%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%9A%84%E7%89%B9%E6%80%A7/" >认识微服务（一）微服务的特性</a>
         </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/07/02/hello-world/" >Hello World</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
     
     
         <li class="archive-post-item">
@@ -727,20 +690,6 @@ Integer i = new Integer(...
     
         <li class="archive-post-item">
             <span class="archive-post-date">07/02</span><a class="archive-post-title" href= "/2020/07/02/Integer%E5%92%8Cint%E7%9A%84%E5%8C%BA%E5%88%AB/" >Integer和int的区别</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/07/02/hello-world/" >Hello World</a>
         </li>
     
     </div>
@@ -768,6 +717,10 @@ Integer i = new Integer(...
     
         <span class="sidebar-tag-name" data-tags="设计规范"><span class="iconfont-archer">&#xe606;</span>设计规范</span>
     
+        <span class="sidebar-tag-name" data-tags="java"><span class="iconfont-archer">&#xe606;</span>java</span>
+    
+        <span class="sidebar-tag-name" data-tags="servlet"><span class="iconfont-archer">&#xe606;</span>servlet</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -789,6 +742,56 @@ jsonContent:
     content: false
     slug: false
     updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "Nyaxs"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+     
+    </body>
+</html>
+
+
+dated: false
     comments: false
     link: false
     permalink: false
