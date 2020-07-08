@@ -29,7 +29,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://s1.ax1x.com/2020/07/04/NzKAo9.jpg">
 <meta property="article:published_time" content="2020-07-04T12:39:19.000Z">
-<meta property="article:modified_time" content="2020-07-04T12:40:08.595Z">
+<meta property="article:modified_time" content="2020-07-08T08:55:58.074Z">
 <meta property="article:author" content="Nyaxs">
 <meta property="article:tag" content="web">
 <meta property="article:tag" content="js">
@@ -290,7 +290,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">2.2k</span>Reading time: <span class="post-count reading-time">8 min</span></span>
+                        <span>Word count: <span class="post-count word-count">3k</span>Reading time: <span class="post-count reading-time">12 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -549,6 +549,13 @@ height:50vh;
 </ul>
 </li>
 </ol>
+<pre><code>5. Node中间件代理(两次跨域)</code></pre><p>实现原理：同源策略是浏览器需要遵循的标准，而如果是服务器向服务器请求就无需遵循同源策略。<br>代理服务器，需要做以下几个步骤：</p>
+<p>接受客户端请求 。<br>将请求 转发给服务器。<br>拿到服务器 响应 数据。<br>将 响应 转发给客户端。</p>
+<p>我们先来看个例子：本地文件index.html文件，通过代理服务器<a href="http://localhost:3000向目标服务器http://localhost:4000请求数据。">http://localhost:3000向目标服务器http://localhost:4000请求数据。</a><br>// index.html(<a href="http://127.0.0.1:5500" target="_blank" rel="noopener">http://127.0.0.1:5500</a>)<br> <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script><br>    <script><br>      $.ajax({<br>        url: '<a href="http://localhost:3000&#39;">http://localhost:3000&#39;</a>,<br>        type: 'post',<br>        data: { name: 'xiamen', password: '123456' },<br>        contentType: 'application/json;charset=utf-8',<br>        success: function(result) {<br>          console.log(result) // {"title":"fontend","password":"123456"}<br>        },<br>        error: function(msg) {<br>          console.log(msg)<br>        }<br>      })<br>     </script><br>复制代码// server1.js 代理服务器(<a href="http://localhost:3000" target="_blank" rel="noopener">http://localhost:3000</a>)<br>const http = require(‘http’)<br>// 第一步：接受客户端请求<br>const server = http.createServer((request, response) =&gt; {<br>  // 代理服务器，直接和浏览器直接交互，需要设置CORS 的首部字段<br>  response.writeHead(200, {<br>    ‘Access-Control-Allow-Origin’: ‘<em>‘,<br>    ‘Access-Control-Allow-Methods’: ‘</em>‘,<br>    ‘Access-Control-Allow-Headers’: ‘Content-Type’<br>  })<br>  // 第二步：将请求转发给服务器<br>  const proxyRequest = http<br>    .request(<br>      {<br>        host: ‘127.0.0.1’,<br>        port: 4000,<br>        url: ‘/‘,<br>        method: request.method,<br>        headers: request.headers<br>      },<br>      serverResponse =&gt; {<br>        // 第三步：收到服务器的响应<br>        var body = ‘’<br>        serverResponse.on(‘data’, chunk =&gt; {<br>          body += chunk<br>        })<br>        serverResponse.on(‘end’, () =&gt; {<br>          console.log(‘The data is ‘ + body)<br>          // 第四步：将响应结果转发给浏览器<br>          response.end(body)<br>        })<br>      }<br>    )<br>    .end()<br>})<br>server.listen(3000, () =&gt; {<br>  console.log(‘The proxyServer is running at <a href="http://localhost:3000&#39;">http://localhost:3000&#39;</a>)<br>})<br>复制代码// server2.js(<a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a>)<br>const http = require(‘http’)<br>const data = { title: ‘fontend’, password: ‘123456’ }<br>const server = http.createServer((request, response) =&gt; {<br>  if (request.url === ‘/‘) {<br>    response.end(JSON.stringify(data))<br>  }<br>})<br>server.listen(4000, () =&gt; {<br>  console.log(‘The server is running at <a href="http://localhost:4000&#39;">http://localhost:4000&#39;</a>)<br>})<br>复制代码上述代码经过两次跨域，值得注意的是浏览器向代理服务器发送请求，也遵循同源策略，最后在index.html文件打印出{“title”:”fontend”,”password”:”123456”}<br>6.nginx反向代理<br>实现原理类似于Node中间件代理，需要你搭建一个中转nginx服务器，用于转发请求。<br>使用nginx反向代理实现跨域，是最简单的跨域方式。只需要修改nginx的配置即可解决跨域问题，支持所有浏览器，支持session，不需要修改任何代码，并且不会影响服务器性能。<br>实现思路：通过nginx配置一个代理服务器（域名与domain1相同，端口不同）做跳板机，反向代理访问domain2接口，并且可以顺便修改cookie中domain信息，方便当前域cookie写入，实现跨域登录。<br>先下载nginx，然后将nginx目录下的nginx.conf修改如下:<br>// proxy服务器<br>server {<br>    listen       81;<br>    server_name  <a href="http://www.domain1.com" target="_blank" rel="noopener">www.domain1.com</a>;<br>    location / {<br>        proxy_pass   <a href="http://www.domain2.com:8080" target="_blank" rel="noopener">http://www.domain2.com:8080</a>;  #反向代理<br>        proxy_cookie_domain <a href="http://www.domain2.com" target="_blank" rel="noopener">www.domain2.com</a> <a href="http://www.domain1.com" target="_blank" rel="noopener">www.domain1.com</a>; #修改cookie里域名<br>        index  index.html index.htm;</p>
+<pre><code>    # 当用webpack-dev-server等中间件代理接口访问nignx时，此时无浏览器参与，故没有同源限制，下面的跨域配置可不启用
+    add_header Access-Control-Allow-Origin http://www.domain1.com;  #当前端只跨域不带cookie时，可为*
+    add_header Access-Control-Allow-Credentials true;
+}</code></pre><p>}<br>复制代码最后通过命令行nginx -s reload启动nginx<br>// index.html<br>var xhr = new XMLHttpRequest();<br>// 前端开关：浏览器是否读写cookie<br>xhr.withCredentials = true;<br>// 访问nginx中的代理服务器<br>xhr.open(‘get’, ‘<a href="http://www.domain1.com:81/?user=admin&#39;" target="_blank" rel="noopener">http://www.domain1.com:81/?user=admin&#39;</a>, true);<br>xhr.send();<br>复制代码// server.js<br>var http = require(‘http’);<br>var server = http.createServer();<br>var qs = require(‘querystring’);<br>server.on(‘request’, function(req, res) {<br>    var params = qs.parse(req.url.substring(2));<br>    // 向前台写cookie<br>    res.writeHead(200, {<br>        ‘Set-Cookie’: ‘l=a123456;Path=/;Domain=<a href="http://www.domain2.com;HttpOnly&#39;" target="_blank" rel="noopener">www.domain2.com;HttpOnly&#39;</a>   // HttpOnly:脚本无法读取<br>    });<br>    res.write(JSON.stringify(params));<br>    res.end();<br>});<br>server.listen(‘8080’);<br>console.log(‘Server is running at port 8080…’);</p>
 
     </article>
     <!-- license  -->
@@ -557,7 +564,7 @@ height:50vh;
             <p>Author：<a href="http://yoursite.com">Nyaxs</a>
             <p>原文链接：<a href="http://yoursite.com/2020/07/04/%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F/">http://yoursite.com/2020/07/04/%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F/</a>
             <p>发表日期：<a href="http://yoursite.com/2020/07/04/%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F/">July 4th 2020, 8:39:19 pm</a>
-            <p>更新日期：<a href="http://yoursite.com/2020/07/04/%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F/">July 4th 2020, 8:40:08 pm</a>
+            <p>更新日期：<a href="http://yoursite.com/2020/07/04/%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F/">July 8th 2020, 4:55:58 pm</a>
             <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
