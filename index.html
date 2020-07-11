@@ -372,7 +372,23 @@ height:50vh;
                 <span>MySQL中如何获取及处理时间</span>
         </a>
         <div class="abstract-content">
-            
+            MySQL 获取系统时间
+获取当前系统日期时间：select SYSDATE() AS 系统日期时间年月日时分秒;
+
+获取当前系统年月日：select current_date AS 年月日;
+
+
+Mysql数据库中获取系统时间，年，月，日单个获取
+
+获取当前系统年份：select year(CURRENT_DATE) AS 年 ;
+
+获取当前系统月份：select month(CURRENT_DATE) AS 月;
+
+获取当前系统日：select day(CURRENT_DATE) AS 日;
+
+获取当前系统时间：select time(SYSDATE()) AS 系统时间;
+
+获取当...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -380,6 +396,16 @@ height:50vh;
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/11</span>
             </div>
             <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "sql">sql</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "mysql">mysql</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "database">database</a>
+    
+</div>
             
         </div>
     </article>
@@ -1383,6 +1409,8 @@ String[] s = {&quot;qwq&quot;,&quot;q&quo...
         <span class="sidebar-tag-name" data-tags="http"><span class="iconfont-archer">&#xe606;</span>http</span>
     
         <span class="sidebar-tag-name" data-tags="tcp/ip"><span class="iconfont-archer">&#xe606;</span>tcp/ip</span>
+    
+        <span class="sidebar-tag-name" data-tags="database"><span class="iconfont-archer">&#xe606;</span>database</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta property="og:type" content="website">
 <meta property="og:title" content="Hello">
-<meta property="og:url" content="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/database/index.html">
 <meta property="og:site_name" content="Hello">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="Nyaxs">
@@ -354,78 +354,43 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2020/07/08/%E5%B8%B8%E8%A7%81%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" >
+        <a class="abstract-title" href = "/2020/07/11/MySQL%E4%B8%AD%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E5%8F%8A%E5%A4%84%E7%90%86%E6%97%B6%E9%97%B4/" >
             
-                <span>常见排序算法</span>
+                <span>MySQL中如何获取及处理时间</span>
         </a>
         <div class="abstract-content">
-            常见排序算法
-冒泡排序package com.nyaxs.algorithm;
+            MySQL 获取系统时间
+获取当前系统日期时间：select SYSDATE() AS 系统日期时间年月日时分秒;
 
-import java.util.Arrays;
-/**
+获取当前系统年月日：select current_date AS 年月日;
 
-@author nyaxs
 
-@version V1.0
+Mysql数据库中获取系统时间，年，月，日单个获取
 
-@Package com.nyaxs.algorithm
+获取当前系统年份：select year(CURRENT_DATE) AS 年 ;
 
-@date 2020/6/28 17:21
+获取当前系统月份：select month(CURRENT_DATE) AS 月;
 
-/public class BubbleSort {  public static void main(String[] args) {
-Integer[] b = {8,3,2,6,4,5,1,9};
-String[] s = {&quot;qwq&quot;,&quot;q&quo...
+获取当前系统日：select day(CURRENT_DATE) AS 日;
+
+获取当前系统时间：select time(SYSDATE()) AS 系统时间;
+
+获取当...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/08</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/11</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "java">java</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "sql">sql</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "mysql">mysql</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "排序">排序</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/07/07/%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%AE%97%E6%B3%95%E5%8F%8AJava%E4%B8%AD%E7%9A%84Random/" >
-            
-                <span>随机数算法及Java中的Random</span>
-        </a>
-        <div class="abstract-content">
-            电脑取随机数是什么原理，是真随机吗？首先，「真随机」也有不同的含义，若想要「真正的真随机」目测只能靠量子力学了。一般的所谓真随机当然不是指这种，而是指统计意义上的随机，也就是具备不确定性，可以被安全的用于金融等领域，下面说的也是这种。答案是，计算机系统可以产生统计意义上的真随机数。大部分程序和语言中的随机数，确实都只是伪随机。
-是由可确定的函数（常用线性同余），通过一个种子（常用时钟），产生的。这意味着：如果知道了种子，或者已经产生的随机数，都可能获得接下来随机数序列的信息（可预测性）。
-直观来想，计算机就是一种确定的，可预测的的设备：一行行的代码是固定的，一步步的算法是固定的，一个个与...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/07</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "java">java</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "随机数">随机数</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "database">database</a>
     
 </div>
             
