@@ -20,14 +20,17 @@
     <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
     
     <meta name="description" content="">
-    <meta property="og:type" content="article">
+    <meta name="description" content="2.问题描述：Java中抽象类和接口中有构造方法吗?3.问题解答：（1）Java中抽象类和接口中有构造方法吗?①在接口中 不可以有构造方法在接口里写入构造方法时，编译器提示：Interfaces cannot have constructors。A. 构造方法用于初始化成员变量，但是接口成员变量是常量,无需修改。接口是一种规范，被调用时，主要关注的是里边的方法，而方法是不需要初始化的，B. 类可以">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Java基础，接口、抽象类和构造函数">
 <meta property="og:url" content="http://yoursite.com/2020/07/13/Java%E5%9F%BA%E7%A1%80%EF%BC%8C%E6%8E%A5%E5%8F%A3%E3%80%81%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/index.html">
 <meta property="og:site_name" content="Hello">
+<meta property="og:description" content="2.问题描述：Java中抽象类和接口中有构造方法吗?3.问题解答：（1）Java中抽象类和接口中有构造方法吗?①在接口中 不可以有构造方法在接口里写入构造方法时，编译器提示：Interfaces cannot have constructors。A. 构造方法用于初始化成员变量，但是接口成员变量是常量,无需修改。接口是一种规范，被调用时，主要关注的是里边的方法，而方法是不需要初始化的，B. 类可以">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-07-13T10:52:37.000Z">
-<meta property="article:modified_time" content="2020-07-13T10:52:37.123Z">
+<meta property="article:modified_time" content="2020-07-13T10:57:08.523Z">
 <meta property="article:author" content="Nyaxs">
+<meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
@@ -274,9 +277,15 @@ height:50vh;
             <div class="post-intros">
                 <!-- 文章页标签  -->
                 
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "java">java</a>
+    
+</div>
+                
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">0</span>Reading time: <span class="post-count reading-time">1 min</span></span>
+                        <span>Word count: <span class="post-count word-count">837</span>Reading time: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -405,7 +414,18 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        
+        <h3 id="2-问题描述：Java中抽象类和接口中有构造方法吗"><a href="#2-问题描述：Java中抽象类和接口中有构造方法吗" class="headerlink" title="2.问题描述：Java中抽象类和接口中有构造方法吗?"></a>2.问题描述：Java中抽象类和接口中有构造方法吗?</h3><h3 id="3-问题解答："><a href="#3-问题解答：" class="headerlink" title="3.问题解答："></a>3.问题解答：</h3><h4 id="（1）Java中抽象类和接口中有构造方法吗"><a href="#（1）Java中抽象类和接口中有构造方法吗" class="headerlink" title="（1）Java中抽象类和接口中有构造方法吗?"></a>（1）Java中抽象类和接口中有构造方法吗?</h4><h5 id="①在接口中-不可以有构造方法"><a href="#①在接口中-不可以有构造方法" class="headerlink" title="①在接口中 不可以有构造方法"></a>①在接口中 不可以有构造方法</h5><p>在接口里写入构造方法时，编译器提示：Interfaces cannot have constructors。<br>A. 构造方法用于初始化成员变量，但是接口成员变量是常量,无需修改。接口是一种规范，被调用时，主要关注的是里边的方法，而方法是不需要初始化的，<br>B. 类可以实现多个接口，若多个接口都有自己的构造器，则不好决定构造器链的调用次序<br>C. 构造器是属于类自己的，不能继承。因为是纯虚的，接口不需要构造器。</p>
+<h5 id="②在抽象类中-可以有构造方法。"><a href="#②在抽象类中-可以有构造方法。" class="headerlink" title="②在抽象类中 可以有构造方法。"></a>②在抽象类中 可以有构造方法。</h5><p>在抽象类中可以有构造方法，只是不能直接创建抽象类的实例对象，但实例化子类的时候，就会初始化父类，不管父类是不是抽象类都会调用父类的构造方法，初始化一个类，先初始化父类。<br>####（2）补充：构造方法、抽象类、接口的定义：</p>
+<h5 id="①构造函数（构造器、构造函数）：构造函数是一种特殊的函数。其主要功能是用来在创建对象时初始化对象，-即为对象成员变量赋初始值，总与new运算符一起使用在创建对象的语句中。"><a href="#①构造函数（构造器、构造函数）：构造函数是一种特殊的函数。其主要功能是用来在创建对象时初始化对象，-即为对象成员变量赋初始值，总与new运算符一起使用在创建对象的语句中。" class="headerlink" title="①构造函数（构造器、构造函数）：构造函数是一种特殊的函数。其主要功能是用来在创建对象时初始化对象， 即为对象成员变量赋初始值，总与new运算符一起使用在创建对象的语句中。"></a>①构造函数（构造器、构造函数）：构造函数是一种特殊的函数。其主要功能是用来在创建对象时初始化对象， 即为对象成员变量赋初始值，总与new运算符一起使用在创建对象的语句中。</h5><p>A. 方法名与类名相同；<br>B. 没有返回类型（例如return、void等）；<br>C. 不能被static、final、native、abstract和synchronized修饰，不能被子类继承。<br>D. 父类的构造方法不能被子类调用，可以通过super语句调用父类的构造方法。<br>E. 构造方法可以重载，以参数的个数，类型，顺序，分为空参构造方法和有参构造方法。</p>
+<h5 id="②抽象类：使用了关键词abstract声明的类叫作“抽象类”。如果一个类里包含了一个或多个抽象方法，类就必须指定成abstract（抽象）。“抽象方法”-属于一种不完整的方法，只含有一个声明，没有方法主体。"><a href="#②抽象类：使用了关键词abstract声明的类叫作“抽象类”。如果一个类里包含了一个或多个抽象方法，类就必须指定成abstract（抽象）。“抽象方法”-属于一种不完整的方法，只含有一个声明，没有方法主体。" class="headerlink" title="②抽象类：使用了关键词abstract声明的类叫作“抽象类”。如果一个类里包含了一个或多个抽象方法，类就必须指定成abstract（抽象）。“抽象方法”,属于一种不完整的方法，只含有一个声明，没有方法主体。"></a>②抽象类：使用了关键词abstract声明的类叫作“抽象类”。如果一个类里包含了一个或多个抽象方法，类就必须指定成abstract（抽象）。“抽象方法”,属于一种不完整的方法，只含有一个声明，没有方法主体。</h5><p>注：<br>抽象类中不一定有抽象方法，抽象方法一定存在于抽象类中。<br>继承抽象类的可以是普通类，但必须重写抽象类中的所有抽象方法，也可以是抽象类，无需重写抽象类中的所有抽象方法。</p>
+<h5 id="③接口：接口是一种规范，是一系列方法的声明，是一些方法特征的集合，一个接口只有方法的特征没有方法的实现，因此这些方法可以在不同的地方被不同的类实现，而这些实现可以具有不同的行为（功能）。"><a href="#③接口：接口是一种规范，是一系列方法的声明，是一些方法特征的集合，一个接口只有方法的特征没有方法的实现，因此这些方法可以在不同的地方被不同的类实现，而这些实现可以具有不同的行为（功能）。" class="headerlink" title="③接口：接口是一种规范，是一系列方法的声明，是一些方法特征的集合，一个接口只有方法的特征没有方法的实现，因此这些方法可以在不同的地方被不同的类实现，而这些实现可以具有不同的行为（功能）。"></a>③接口：接口是一种规范，是一系列方法的声明，是一些方法特征的集合，一个接口只有方法的特征没有方法的实现，因此这些方法可以在不同的地方被不同的类实现，而这些实现可以具有不同的行为（功能）。</h5><p>注：<br>可以说是一种特殊的抽象类，里面的方法全是抽象方法。<br>子类实现接口必须对接口中的方法全部重写。</p>
+<h5 id="接口和抽象类的语法区别："><a href="#接口和抽象类的语法区别：" class="headerlink" title="接口和抽象类的语法区别："></a>接口和抽象类的语法区别：</h5><ol>
+<li>接口不能有构造方法，抽象类可以有。</li>
+<li>接口不能有方法体，抽象类可以有。</li>
+<li>接口不能有静态方法，抽象类可以有。</li>
+<li>在接口中凡是变量必须是public static final，而在抽象类中没有要求。<br>————————————————</li>
+</ol>
+
     </article>
     <!-- license  -->
     
@@ -413,7 +433,7 @@ height:50vh;
             <p>Author：<a href="http://yoursite.com">Nyaxs</a>
             <p>原文链接：<a href="http://yoursite.com/2020/07/13/Java%E5%9F%BA%E7%A1%80%EF%BC%8C%E6%8E%A5%E5%8F%A3%E3%80%81%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/">http://yoursite.com/2020/07/13/Java%E5%9F%BA%E7%A1%80%EF%BC%8C%E6%8E%A5%E5%8F%A3%E3%80%81%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/</a>
             <p>发表日期：<a href="http://yoursite.com/2020/07/13/Java%E5%9F%BA%E7%A1%80%EF%BC%8C%E6%8E%A5%E5%8F%A3%E3%80%81%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/">July 13th 2020, 6:52:37 pm</a>
-            <p>更新日期：<a href="http://yoursite.com/2020/07/13/Java%E5%9F%BA%E7%A1%80%EF%BC%8C%E6%8E%A5%E5%8F%A3%E3%80%81%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/">July 13th 2020, 6:52:37 pm</a>
+            <p>更新日期：<a href="http://yoursite.com/2020/07/13/Java%E5%9F%BA%E7%A1%80%EF%BC%8C%E6%8E%A5%E5%8F%A3%E3%80%81%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/">July 13th 2020, 6:57:08 pm</a>
             <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -556,7 +576,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-问题描述：Java中抽象类和接口中有构造方法吗"><span class="toc-number">1.</span> <span class="toc-text">2.问题描述：Java中抽象类和接口中有构造方法吗?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-问题解答："><span class="toc-number">2.</span> <span class="toc-text">3.问题解答：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#（1）Java中抽象类和接口中有构造方法吗"><span class="toc-number">2.1.</span> <span class="toc-text">（1）Java中抽象类和接口中有构造方法吗?</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#①在接口中-不可以有构造方法"><span class="toc-number">2.1.1.</span> <span class="toc-text">①在接口中 不可以有构造方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#②在抽象类中-可以有构造方法。"><span class="toc-number">2.1.2.</span> <span class="toc-text">②在抽象类中 可以有构造方法。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#①构造函数（构造器、构造函数）：构造函数是一种特殊的函数。其主要功能是用来在创建对象时初始化对象，-即为对象成员变量赋初始值，总与new运算符一起使用在创建对象的语句中。"><span class="toc-number">2.1.3.</span> <span class="toc-text">①构造函数（构造器、构造函数）：构造函数是一种特殊的函数。其主要功能是用来在创建对象时初始化对象， 即为对象成员变量赋初始值，总与new运算符一起使用在创建对象的语句中。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#②抽象类：使用了关键词abstract声明的类叫作“抽象类”。如果一个类里包含了一个或多个抽象方法，类就必须指定成abstract（抽象）。“抽象方法”-属于一种不完整的方法，只含有一个声明，没有方法主体。"><span class="toc-number">2.1.4.</span> <span class="toc-text">②抽象类：使用了关键词abstract声明的类叫作“抽象类”。如果一个类里包含了一个或多个抽象方法，类就必须指定成abstract（抽象）。“抽象方法”,属于一种不完整的方法，只含有一个声明，没有方法主体。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#③接口：接口是一种规范，是一系列方法的声明，是一些方法特征的集合，一个接口只有方法的特征没有方法的实现，因此这些方法可以在不同的地方被不同的类实现，而这些实现可以具有不同的行为（功能）。"><span class="toc-number">2.1.5.</span> <span class="toc-text">③接口：接口是一种规范，是一系列方法的声明，是一些方法特征的集合，一个接口只有方法的特征没有方法的实现，因此这些方法可以在不同的地方被不同的类实现，而这些实现可以具有不同的行为（功能）。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#接口和抽象类的语法区别："><span class="toc-number">2.1.6.</span> <span class="toc-text">接口和抽象类的语法区别：</span></a></li></ol></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
