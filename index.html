@@ -372,8 +372,23 @@ height:50vh;
                 <span>Mybatis速查</span>
         </a>
         <div class="abstract-content">
-            MyBatis运行过程–&gt;SqlSessionFactoryBuilder读取XML配置文件或者Configuration类实例–&gt;SqlSessionFactoryBuilder根据配置创建SqlSessionFactory实例–&gt;通过SqlSessionFactory获取SqlSession，SqlSession提供数据库执行SQL命令所有的所需方法–&gt;执行已映射的SQL语句
+            1、MyBatis运行过程
+SqlSessionFactoryBuilder读取XML配置文件或者Configuration类实例
 
+–&gt;
+
+SqlSessionFactoryBuilder根据配置创建SqlSessionFactory实例
+
+–&gt;
+
+通过SqlSessionFactory获取SqlSession，SqlSession提供数据库执行SQL命令所有的所需方法
+
+–&gt;
+
+执行已映射的SQL语句
+
+2、#{}和${}的区别是什么？
+${}是 Properties 文件中的变量占位符，它可以用于标签属性值和 sql 内部，属于静态文本替换，比如${driver}...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
