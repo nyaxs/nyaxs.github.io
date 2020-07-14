@@ -20,13 +20,15 @@
     <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
     
     <meta name="description" content="">
-    <meta property="og:type" content="article">
+    <meta name="description" content="首先要检查版本对应关系MyBatis-Spring-Boot-Starter 要求如下依赖版本:    MyBatis-Spring-Boot-Starter MyBatis-Spring Spring Boot Java    2.1 2.0 (need 2.0.2+ for enable all features) 2.1 or higher 8 or higher   1.3 1.3 1.5">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Springboot速查，MyBatis整合过程">
 <meta property="og:url" content="http://yoursite.com/2020/07/13/Springboot%E9%80%9F%E6%9F%A5%EF%BC%8CMyBatis%E6%95%B4%E5%90%88%E8%BF%87%E7%A8%8B/index.html">
 <meta property="og:site_name" content="Hello">
+<meta property="og:description" content="首先要检查版本对应关系MyBatis-Spring-Boot-Starter 要求如下依赖版本:    MyBatis-Spring-Boot-Starter MyBatis-Spring Spring Boot Java    2.1 2.0 (need 2.0.2+ for enable all features) 2.1 or higher 8 or higher   1.3 1.3 1.5">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-07-13T10:34:17.000Z">
-<meta property="article:modified_time" content="2020-07-13T10:51:41.789Z">
+<meta property="article:modified_time" content="2020-07-14T07:19:39.764Z">
 <meta property="article:author" content="Nyaxs">
 <meta property="article:tag" content="web">
 <meta property="article:tag" content="mybatis">
@@ -289,7 +291,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">0</span>Reading time: <span class="post-count reading-time">1 min</span></span>
+                        <span>Word count: <span class="post-count word-count">1.7k</span>Reading time: <span class="post-count reading-time">6 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -418,7 +420,64 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        
+        <h2 id="首先要检查版本对应关系"><a href="#首先要检查版本对应关系" class="headerlink" title="首先要检查版本对应关系"></a>首先要检查版本对应关系</h2><p>MyBatis-Spring-Boot-Starter 要求如下依赖版本:</p>
+<table>
+<thead>
+<tr>
+<th>MyBatis-Spring-Boot-Starter</th>
+<th>MyBatis-Spring</th>
+<th>Spring Boot</th>
+<th>Java</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2.1</td>
+<td>2.0 (need 2.0.2+ for enable all features)</td>
+<td>2.1 or higher</td>
+<td>8 or higher</td>
+</tr>
+<tr>
+<td>1.3</td>
+<td>1.3</td>
+<td>1.5</td>
+<td>6 or higher</td>
+</tr>
+</tbody></table>
+<p>Maven<br>如果您使用的是Maven，只需将以下依赖项添加到pom.xml中：</p>
+<p>&lt;依赖性&gt;<br>    <groupId> org.mybatis.spring.boot &lt;/ groupId&gt;<br>    <artifactId> mybatis-spring-boot-starter &lt;/ artifactId&gt;<br>    <version> 2.1.3 &lt;/ version&gt;<br>&lt;/ dependency&gt;<br>摇篮<br>如果使用gradle将其添加到您的build.gradle：</p>
+<p>依赖项{<br>  编译（“ org.mybatis.spring.boot：mybatis-spring-boot-starter：2.1.3”）<br>}<br>快速设置<br>您可能已经知道，要将MyBatis与Spring一起使用，您至少需要一个SqlSessionFactory和至少一个mapper接口。</p>
+<p>MyBatis-Spring-Boot-Starter将：</p>
+<p>自动检测现有的数据源<br>将创建并注册一个实例的SqlSessionFactory是通过数据源作为输入使用SqlSessionFactoryBean会<br>将创建并注册从SqlSessionFactory中获取的SqlSessionTemplate的实例<br>自动扫描您的映射器，将它们链接到SqlSessionTemplate并将它们注册到Spring上下文，以便可以将它们注入到您的bean中<br>假设我们有以下映射器：</p>
+<p>@Mapper<br>公共接口CityMapper {</p>
+<p>  @Select（“ SELECT * FROM CITY WHERE state =＃{state}”）<br>  城市findByState（@Param（“ state”）字符串状态）；</p>
+<p>}<br>您只需要创建一个普通的Spring引导应用程序，然后按如下所示注入映射器即可（在Spring 4.3+上可用）：</p>
+<p>@SpringBootApplication<br>公共类SampleMybatisApplication实现CommandLineRunner {</p>
+<p>  私人最终CityMapper cityMapper；</p>
+<p>  公共SampleMybatisApplication（CityMapper cityMapper）{<br>    this.cityMapper = cityMapper;<br>  }</p>
+<p>  公共静态void main（String [] args）{<br>    SpringApplication.run（SampleMybatisApplication.class，args）;<br>  }</p>
+<p>  @Override<br>  public void run（String … args）引发异常{<br>    System.out.println（this.cityMapper.findByState（“ CA”））;<br>  }</p>
+<p>}<br>这就是您要做的。您的应用程序现在可以作为普通的Spring Boot应用程序运行。</p>
+<p>进阶扫描<br>默认情况下，MyBatis-Spring-Boot-Starter将搜索带有@Mapper批注的映射器。</p>
+<p>您可能需要指定自定义注释或标记界面进行扫描。如果是这样，则必须使用@MapperScan批注。在MyBatis-Spring参考页面中查看有关它的更多信息。</p>
+<p>如果MyBatis-Spring-Boot-Starter 在Spring的上下文中找到至少一个MapperFactoryBean，则它将不会启动扫描过程，因此，如果您想完全停止扫描，则应使用@Bean方法显式注册映射器。</p>
+<p>使用SqlSession<br>创建了SqlSessionTemplate的实例并将其添加到Spring上下文中，因此您可以使用MyBatis API使其像下面那样注入到您的bean中（在Spring 4.3+上可用）：</p>
+<p>@零件<br>公共类CityDao {</p>
+<p>  私有最终SqlSession sqlSession;</p>
+<p>  公共CityDao（SqlSession sqlSession）{<br>    this.sqlSession = sqlSession;<br>  }</p>
+<p>  公共城市selectCityById（长ID）{<br>    返回this.sqlSession.selectOne（“ selectCityById”，id）;<br>  }</p>
+<p>}<br>组态<br>与其他任何Spring Boot应用程序一样，MyBatis-Spring-Boot-Application配置参数存储在application.properties（或application.yml）中。</p>
+<p>MyBatis使用前缀mybatis作为其属性。</p>
+<p>可用属性为：</p>
+<p>属性    描述<br>配置位置    MyBatis xml配置文件的位置。<br>检查配置位置    指示是否执行MyBatis xml配置文件的存在性检查。<br>映射器位置    Mapper xml配置文件的位置。<br>类型别名包    用于搜索类型别名的软件包。（包定界符为“ ，; \ t \ n ”）<br>类型别名超类型    用于过滤类型别名的超类。如果未指定，则MyBatis将所有从type-aliases-package搜索的类当作类型别名。<br>类型处理程序包    用于搜索类型处理程序的软件包。（包定界符为“ ，; \ t \ n ”）<br>执行者类型    执行程序类型：SIMPLE，REUSE，BATCH<br>默认脚本语言驱动程序    默认脚本语言驱动程序类。此功能需要与mybatis-spring 2.0.2+一起使用。<br>配置属性    MyBatis配置的外部化属性。可以将指定的属性用作MyBatis配置文件和Mapper文件上的占位符。有关详细信息，请参见MyBatis参考页。<br>延迟初始化    是否启用映射器bean的延迟初始化。设置为true可启用延迟初始化。此功能需要与mybatis-spring 2.0.2+一起使用。<br>组态。*    MyBatis Core提供的Configuration bean的属性键。关于可用的嵌套属性，请参见MyBatis参考页。注意：此属性不能与config-location一起使用。<br>scripting-language-driver.thymeleaf。*    MyBatis Thymeleaf提供的ThymeleafLanguageDriverConfig bean的属性键。有关可用的嵌套属性，请参见MyBatis Thymeleaf参考页。<br>scripting-language-driver.freemarker。*    MyBatis FreeMarker提供的FreeMarkerLanguageDriverConfig bean的属性键。关于可用的嵌套属性，请参见MyBatis FreeMarker参考页。此功能需要与mybatis-freemarker 1.2.0+一起使用。<br>scripting-language-driver.velocity。*    MyBatis Velocity提供的VelocityLanguageDriverConfig bean的属性键。关于可用的嵌套属性，请参见MyBatis Velocity参考页。此功能需要与mybatis-velocity 2.1.0+一起使用。<br>例如：</p>
+<p>＃application.properties<br>mybatis.type-aliases-package = com.example.domain.model<br>mybatis.type-handlers-package = com.example.typehandler<br>mybatis.configuration.map-underscore-to-camel-case = true<br>mybatis.configuration.default-fetch-size = 100<br>mybatis.configuration.default-statement-timeout = 30<br>…<br>＃application.yml<br>mybatis：<br>    类型别名包：com.example.domain.model<br>    类型处理程序包：com.example.typehandler<br>    组态：<br>        映射到驼峰下划线：true<br>        默认提取大小：100<br>        默认语句超时：30<br>…<br>使用ConfigurationCustomizer<br>MyBatis-Spring-Boot-Starter提供了自定义使用Java Config自动配置生成的MyBatis配置的机会。MyBatis-Spring-Boot-Starter将自动搜索实现ConfigurationCustomizer接口的bean ，并调用自定义MyBatis配置的方法。（自1.2.1或更高版本开始可用）</p>
+<p>例如：</p>
+<p>@组态<br>公共类MyBatisConfig {<br>  @豆<br>  ConfigurationCustomizer mybatisConfigurationCustomizer（）{<br>    返回新的ConfigurationCustomizer（）{<br>      @Override<br>      public void custom（配置配置）{<br>        //定制…<br>      }<br>    };<br>  }<br>}<br>使用SpringBootVFS<br>MyBatis-Spring-Boot-Starter提供SpringBootVFS作为VFS的实现类。该VFS是用于从应用程序（或应用服务器）搜索类别（例如目标类型的别名，类型处理程序类的）。如果使用可执行jar运行Spring Boot应用程序，则需要使用SpringBootVFS。MyBatis-Spring-Boot-Starter提供的自动配置功能会自动使用它，但手动配置不会自动使用它（例如，使用多个DataSource时）。</p>
+<p>如何在手动配置上使用SpringBootVFS：</p>
+<p>@组态<br>公共类MyBatisConfig {<br>  @豆<br>  公共SqlSessionFactory masterSqlSessionFactory（）引发异常{<br>    SqlSessionFactoryBean factoryBean =新的SqlSessionFactoryBean（）;<br>    factoryBean.setDataSource（masterDataSource（））;<br>    factoryBean.setVfs（SpringBootVFS.class）; //将SpringBootVFS类设置为SqlSessionFactoryBean<br>    // …<br>    返回factoryBean.getObject（）;<br>  }<br>}<br>检测MyBatis组件<br>MyBatis-Spring-Boot-Starter将检测实现MyBatis提供的以下接口的bean。</p>
+<p>拦截器<br>类型处理程序<br>LanguageDriver（需要与mybatis-spring 2.0.2+一起使用）<br>DatabaseIdProvider<br>@组态<br>公共类MyBatisConfig {<br>  @豆<br>  MyInterceptor myInterceptor（）{<br>    返回MyInterceptor（）;<br>  }<br>  @豆<br>  MyTypeHandler myTypeHandler（）{<br>    返回MyTypeHandler（）;<br>  }<br>  @豆<br>  MyLanguageDriver myLanguageDriver（）{<br>    返回MyLanguageDriver（）;<br>  }<br>  @豆<br>  VendorDatabaseIdProvider databaseIdProvider（）{<br>    VendorDatabaseIdProvider databaseIdProvider =新的VendorDatabaseIdProvider（）;<br>    属性properties = new Properties（）;<br>    properties.put（“ SQL Server”，“ sqlserver”）;<br>    properties.put（“ DB2”，“ db2”）;<br>    properties.put（“ H2”，“ h2”）;<br>    databaseIdProvider.setProperties（properties）;<br>    返回databaseIdProvider;<br>  }<br>}<br>注意：如果检测到LangaugeDriver的计数为1，则会自动设置为默认脚本语言。</p>
+<p>自定义LanguageDriver<br>如果要自定义通过自动配置创建的LanguageDriver，请注册用户定义的bean。</p>
+<p>ThymeleafLanguageDriver<br>@组态<br>公共类MyBatisConfig {<br>  @豆<br>  ThymeleafLanguageDriverConfig thymeleafLanguageDriverConfig（）{<br>    返回ThymeleafLanguageDriverConfig.newInstance（c-&gt; {<br>      // …定制代码<br>    }）;<br>  }<br>}<br>FreeMarkerLanguageDriverConfig<br>@组态<br>公共类MyBatisConfig {<br>  @豆<br>  FreeMarkerLanguageDriverConfig freeMarkerLanguageDriverConfig（）{<br>    返回FreeMarkerLanguageDriverConfig.newInstance（c-&gt; {<br>      // …定制代码<br>    }）;<br>  }<br>}<br>ThymeleafLanguageDriver<br>@组态<br>公共类MyBatisConfig {<br>  @豆<br>  VelocityLanguageDriverConfig velocityLanguageDriverConfig（）{<br>    返回VelocityLanguageDriverConfig.newInstance（c-&gt; {<br>      // …定制代码<br>    }）;<br>  }<br>}</p>
+
     </article>
     <!-- license  -->
     
@@ -426,7 +485,7 @@ height:50vh;
             <p>Author：<a href="http://yoursite.com">Nyaxs</a>
             <p>原文链接：<a href="http://yoursite.com/2020/07/13/Springboot%E9%80%9F%E6%9F%A5%EF%BC%8CMyBatis%E6%95%B4%E5%90%88%E8%BF%87%E7%A8%8B/">http://yoursite.com/2020/07/13/Springboot%E9%80%9F%E6%9F%A5%EF%BC%8CMyBatis%E6%95%B4%E5%90%88%E8%BF%87%E7%A8%8B/</a>
             <p>发表日期：<a href="http://yoursite.com/2020/07/13/Springboot%E9%80%9F%E6%9F%A5%EF%BC%8CMyBatis%E6%95%B4%E5%90%88%E8%BF%87%E7%A8%8B/">July 13th 2020, 6:34:17 pm</a>
-            <p>更新日期：<a href="http://yoursite.com/2020/07/13/Springboot%E9%80%9F%E6%9F%A5%EF%BC%8CMyBatis%E6%95%B4%E5%90%88%E8%BF%87%E7%A8%8B/">July 13th 2020, 6:51:41 pm</a>
+            <p>更新日期：<a href="http://yoursite.com/2020/07/13/Springboot%E9%80%9F%E6%9F%A5%EF%BC%8CMyBatis%E6%95%B4%E5%90%88%E8%BF%87%E7%A8%8B/">July 14th 2020, 3:19:39 pm</a>
             <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -574,7 +633,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#首先要检查版本对应关系"><span class="toc-number">1.</span> <span class="toc-text">首先要检查版本对应关系</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -920,10 +979,9 @@ top:50vh;
     
     
     
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 26
+        Total : 27
         </div>
         <!-- search  -->
         
@@ -939,12 +997,17 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/13</span><a class="archive-post-title" href= "/2020/07/13/Springboot%E9%80%9F%E6%9F%A5%EF%BC%8CMyBatis%E6%95%B4%E5%90%88%E8%BF%87%E7%A8%8B/" >Springboot速查，MyBatis整合过程</a>
+            <span class="archive-post-date">07/14</span><a class="archive-post-title" href= "/2020/07/14/Mybatis%E9%80%9F%E6%9F%A5/" >Mybatis速查</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">07/13</span><a class="archive-post-title" href= "/2020/07/13/Java%E5%9F%BA%E7%A1%80%EF%BC%8C%E6%8E%A5%E5%8F%A3%E3%80%81%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/" >Java基础，接口、抽象类和构造函数</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/13</span><a class="archive-post-title" href= "/2020/07/13/Springboot%E9%80%9F%E6%9F%A5%EF%BC%8CMyBatis%E6%95%B4%E5%90%88%E8%BF%87%E7%A8%8B/" >Springboot速查，MyBatis整合过程</a>
         </li>
     
     
@@ -1027,17 +1090,17 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/06</span><a class="archive-post-title" href= "/2020/07/06/%E5%90%84%E7%A7%8D%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99%E5%AD%98%E6%A1%A3/" >各种工具网站存档</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">07/06</span><a class="archive-post-title" href= "/2020/07/06/%E8%AE%A4%E8%AF%86Docker/" >认识Docker</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">07/06</span><a class="archive-post-title" href= "/2020/07/06/Java-Web-%E8%BF%90%E8%A1%8C%E7%9A%84%E5%9F%BA%E7%A1%80%E9%80%BB%E8%BE%91/" >Java Web 运行的基础逻辑</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/06</span><a class="archive-post-title" href= "/2020/07/06/%E5%90%84%E7%A7%8D%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99%E5%AD%98%E6%A1%A3/" >各种工具网站存档</a>
         </li>
     
     

@@ -354,6 +354,38 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/07/08/MyBatis%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6/" >
+            
+                <span>MyBatis缓存机制</span>
+        </a>
+        <div class="abstract-content">
+            前言MyBatis是常见的Java数据库访问层框架。在日常工作中，开发人员多数情况下是使用MyBatis的默认缓存配置，但是MyBatis缓存机制有一些不足之处，在使用中容易引起脏数据，形成一些潜在的隐患。个人在业务开发中也处理过一些由于MyBatis缓存引发的开发问题，带着个人的兴趣，希望从应用及源码的角度为读者梳理MyBatis缓存机制。
+一级缓存一级缓存介绍在应用运行过程中，我们有可能在一次数据库会话中，执行多次查询条件完全相同的SQL，MyBatis提供了一级缓存的方案优化这部分场景，如果是相同的SQL语句，会优先命中一级缓存，避免直接对数据库进行查询，提高性能。具体执行过程如下...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/08</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "web">web</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "mybatis">mybatis</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/07/07/%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%AE%97%E6%B3%95%E5%8F%8AJava%E4%B8%AD%E7%9A%84Random/" >
             
                 <span>随机数算法及Java中的Random</span>
@@ -657,67 +689,6 @@ DLL.sql: https://drive.google.com/file/d/0B_oq3-doZhC-M...
         <a class="post-tag" href="javascript:void(0);" data-tags = "restful">restful</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "设计规范">设计规范</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/07/04/%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F/" >
-            
-                <span>如何解决跨域</span>
-        </a>
-        <div class="abstract-content">
-            跨域跨域是什么要了解跨域，需要先了解什么是同源策略。
-同源策略
-同源策略是一种约定，它是浏览器最核心也最基本的安全功能，如果缺少了同源策略，浏览器很容易受到XSS、CSRF等攻击。
-  所谓同源是指”协议+域名+端口”三者相同，即便两个不同的域名指向同一个ip地址，也非同源。
-
-一个域名地址的组成：
-
-
-
-
-
-协议
-子域名
-主域名
-端口号
-请求资源地址
-
-
-
-http://
-www.
-abc.com
-:8080
-/ scripts/jquery.js
-
-
-
-同源策略限制的内容有：
-Cookie、LocalStorage、IndexedDB 等存储性内容
-DOM 节点
-AJAX 请求发送后...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/04</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "web">web</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "js">js</a>
     
 </div>
             
@@ -1165,10 +1136,9 @@ AJAX 请求发送后...
     
     
     
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 26
+        Total : 27
         </div>
         <!-- search  -->
         
@@ -1184,12 +1154,17 @@ AJAX 请求发送后...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/13</span><a class="archive-post-title" href= "/2020/07/13/Springboot%E9%80%9F%E6%9F%A5%EF%BC%8CMyBatis%E6%95%B4%E5%90%88%E8%BF%87%E7%A8%8B/" >Springboot速查，MyBatis整合过程</a>
+            <span class="archive-post-date">07/14</span><a class="archive-post-title" href= "/2020/07/14/Mybatis%E9%80%9F%E6%9F%A5/" >Mybatis速查</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">07/13</span><a class="archive-post-title" href= "/2020/07/13/Java%E5%9F%BA%E7%A1%80%EF%BC%8C%E6%8E%A5%E5%8F%A3%E3%80%81%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/" >Java基础，接口、抽象类和构造函数</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/13</span><a class="archive-post-title" href= "/2020/07/13/Springboot%E9%80%9F%E6%9F%A5%EF%BC%8CMyBatis%E6%95%B4%E5%90%88%E8%BF%87%E7%A8%8B/" >Springboot速查，MyBatis整合过程</a>
         </li>
     
     
@@ -1272,17 +1247,17 @@ AJAX 请求发送后...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/06</span><a class="archive-post-title" href= "/2020/07/06/%E5%90%84%E7%A7%8D%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99%E5%AD%98%E6%A1%A3/" >各种工具网站存档</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">07/06</span><a class="archive-post-title" href= "/2020/07/06/%E8%AE%A4%E8%AF%86Docker/" >认识Docker</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">07/06</span><a class="archive-post-title" href= "/2020/07/06/Java-Web-%E8%BF%90%E8%A1%8C%E7%9A%84%E5%9F%BA%E7%A1%80%E9%80%BB%E8%BE%91/" >Java Web 运行的基础逻辑</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/06</span><a class="archive-post-title" href= "/2020/07/06/%E5%90%84%E7%A7%8D%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99%E5%AD%98%E6%A1%A3/" >各种工具网站存档</a>
         </li>
     
     

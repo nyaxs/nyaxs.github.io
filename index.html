@@ -367,6 +367,40 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/07/14/Mybatis%E9%80%9F%E6%9F%A5/" >
+            
+                <span>Mybatis速查</span>
+        </a>
+        <div class="abstract-content">
+            MyBatis运行过程–&gt;SqlSessionFactoryBuilder读取XML配置文件或者Configuration类实例–&gt;SqlSessionFactoryBuilder根据配置创建SqlSessionFactory实例–&gt;通过SqlSessionFactory获取SqlSession，SqlSession提供数据库执行SQL命令所有的所需方法–&gt;执行已映射的SQL语句
+
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/14</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "web">web</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "java">java</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "mybatis">mybatis</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/07/13/Java%E5%9F%BA%E7%A1%80%EF%BC%8C%E6%8E%A5%E5%8F%A3%E3%80%81%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/" >
             
                 <span>Java基础，接口、抽象类和构造函数</span>
@@ -402,7 +436,31 @@ height:50vh;
                 <span>Springboot速查，MyBatis整合过程</span>
         </a>
         <div class="abstract-content">
-            
+            首先要检查版本对应关系MyBatis-Spring-Boot-Starter 要求如下依赖版本:
+
+
+
+MyBatis-Spring-Boot-Starter
+MyBatis-Spring
+Spring Boot
+Java
+
+
+
+2.1
+2.0 (need 2.0.2+ for enable all features)
+2.1 or higher
+8 or higher
+
+
+1.3
+1.3
+1.5
+6 or higher
+
+
+Maven如果您使用的是Maven，只需将以下依赖项添加到pom.xml中：
+&lt;依赖性&gt;     org.mybatis.spring.boot &lt...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -662,38 +720,6 @@ String[] s = {&quot;qwq&quot;,&quot;q&quo...
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/08</span>
             </div>
             <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/07/08/MyBatis%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6/" >
-            
-                <span>MyBatis缓存机制</span>
-        </a>
-        <div class="abstract-content">
-            前言MyBatis是常见的Java数据库访问层框架。在日常工作中，开发人员多数情况下是使用MyBatis的默认缓存配置，但是MyBatis缓存机制有一些不足之处，在使用中容易引起脏数据，形成一些潜在的隐患。个人在业务开发中也处理过一些由于MyBatis缓存引发的开发问题，带着个人的兴趣，希望从应用及源码的角度为读者梳理MyBatis缓存机制。
-一级缓存一级缓存介绍在应用运行过程中，我们有可能在一次数据库会话中，执行多次查询条件完全相同的SQL，MyBatis提供了一级缓存的方案优化这部分场景，如果是相同的SQL语句，会优先命中一级缓存，避免直接对数据库进行查询，提高性能。具体执行过程如下...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/08</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "web">web</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "mybatis">mybatis</a>
-    
-</div>
             
         </div>
     </article>
@@ -1243,10 +1269,9 @@ String[] s = {&quot;qwq&quot;,&quot;q&quo...
     
     
     
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 26
+        Total : 27
         </div>
         <!-- search  -->
         
@@ -1262,12 +1287,17 @@ String[] s = {&quot;qwq&quot;,&quot;q&quo...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/13</span><a class="archive-post-title" href= "/2020/07/13/Springboot%E9%80%9F%E6%9F%A5%EF%BC%8CMyBatis%E6%95%B4%E5%90%88%E8%BF%87%E7%A8%8B/" >Springboot速查，MyBatis整合过程</a>
+            <span class="archive-post-date">07/14</span><a class="archive-post-title" href= "/2020/07/14/Mybatis%E9%80%9F%E6%9F%A5/" >Mybatis速查</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">07/13</span><a class="archive-post-title" href= "/2020/07/13/Java%E5%9F%BA%E7%A1%80%EF%BC%8C%E6%8E%A5%E5%8F%A3%E3%80%81%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/" >Java基础，接口、抽象类和构造函数</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/13</span><a class="archive-post-title" href= "/2020/07/13/Springboot%E9%80%9F%E6%9F%A5%EF%BC%8CMyBatis%E6%95%B4%E5%90%88%E8%BF%87%E7%A8%8B/" >Springboot速查，MyBatis整合过程</a>
         </li>
     
     
@@ -1350,17 +1380,17 @@ String[] s = {&quot;qwq&quot;,&quot;q&quo...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/06</span><a class="archive-post-title" href= "/2020/07/06/%E5%90%84%E7%A7%8D%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99%E5%AD%98%E6%A1%A3/" >各种工具网站存档</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">07/06</span><a class="archive-post-title" href= "/2020/07/06/%E8%AE%A4%E8%AF%86Docker/" >认识Docker</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">07/06</span><a class="archive-post-title" href= "/2020/07/06/Java-Web-%E8%BF%90%E8%A1%8C%E7%9A%84%E5%9F%BA%E7%A1%80%E9%80%BB%E8%BE%91/" >Java Web 运行的基础逻辑</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/06</span><a class="archive-post-title" href= "/2020/07/06/%E5%90%84%E7%A7%8D%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99%E5%AD%98%E6%A1%A3/" >各种工具网站存档</a>
         </li>
     
     

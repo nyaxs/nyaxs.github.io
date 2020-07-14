@@ -20,17 +20,24 @@
     <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
     
     <meta name="description" content="">
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Hello">
-<meta property="og:url" content="http://yoursite.com/tags/java/index.html">
+    <meta name="description" content="MyBatis运行过程–&gt;SqlSessionFactoryBuilder读取XML配置文件或者Configuration类实例–&gt;SqlSessionFactoryBuilder根据配置创建SqlSessionFactory实例–&gt;通过SqlSessionFactory获取SqlSession，SqlSession提供数据库执行SQL命令所有的所需方法–&gt;执行已映射的SQ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mybatis速查">
+<meta property="og:url" content="http://yoursite.com/2020/07/14/Mybatis%E9%80%9F%E6%9F%A5/index.html">
 <meta property="og:site_name" content="Hello">
+<meta property="og:description" content="MyBatis运行过程–&gt;SqlSessionFactoryBuilder读取XML配置文件或者Configuration类实例–&gt;SqlSessionFactoryBuilder根据配置创建SqlSessionFactory实例–&gt;通过SqlSessionFactory获取SqlSession，SqlSession提供数据库执行SQL命令所有的所需方法–&gt;执行已映射的SQ">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-07-14T07:20:51.000Z">
+<meta property="article:modified_time" content="2020-07-14T07:40:34.075Z">
 <meta property="article:author" content="Nyaxs">
+<meta property="article:tag" content="web">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="mybatis">
 <meta name="twitter:card" content="summary">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     
-    <title>Nyaxs Product</title>
+    <title>Mybatis速查 · Nyaxs Product</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -211,12 +218,23 @@
 <meta name="generator" content="Hexo 4.2.1"></head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >Nyaxs Product</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">Mybatis速查</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>Nyaxs Product</a>
 </header>
@@ -228,24 +246,78 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(https://source.unsplash.com/random)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            Mybatis速查
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "web">web</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "java">java</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "mybatis">mybatis</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count word-count">61</span>Reading time: <span class="post-count reading-time">1 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2020/07/14</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -346,335 +418,53 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/07/14/Mybatis%E9%80%9F%E6%9F%A5/" >
-            
-                <span>Mybatis速查</span>
-        </a>
-        <div class="abstract-content">
-            MyBatis运行过程–&gt;SqlSessionFactoryBuilder读取XML配置文件或者Configuration类实例–&gt;SqlSessionFactoryBuilder根据配置创建SqlSessionFactory实例–&gt;通过SqlSessionFactory获取SqlSession，SqlSession提供数据库执行SQL命令所有的所需方法–&gt;执行已映射的SQL语句
+            <main class="main post-page">
+    <article class="article-entry">
+        <h3 id="MyBatis运行过程"><a href="#MyBatis运行过程" class="headerlink" title="MyBatis运行过程"></a>MyBatis运行过程</h3><p>–&gt;<br>SqlSessionFactoryBuilder读取<br>XML配置文件或者Configuration类实例<br>–&gt;<br>SqlSessionFactoryBuilder根据配置创建SqlSessionFactory实例<br>–&gt;<br>通过SqlSessionFactory获取SqlSession，SqlSession提供数据库执行SQL命令所有的所需方法<br>–&gt;<br>执行已映射的SQL语句</p>
 
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/14</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "web">web</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "java">java</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "mybatis">mybatis</a>
-    
-</div>
-            
-        </div>
     </article>
+    <!-- license  -->
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/07/13/Java%E5%9F%BA%E7%A1%80%EF%BC%8C%E6%8E%A5%E5%8F%A3%E3%80%81%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/" >
-            
-                <span>Java基础，接口、抽象类和构造函数</span>
-        </a>
-        <div class="abstract-content">
-            2.问题描述：Java中抽象类和接口中有构造方法吗?3.问题解答：（1）Java中抽象类和接口中有构造方法吗?①在接口中 不可以有构造方法在接口里写入构造方法时，编译器提示：Interfaces cannot have constructors。A. 构造方法用于初始化成员变量，但是接口成员变量是常量,无需修改。接口是一种规范，被调用时，主要关注的是里边的方法，而方法是不需要初始化的，B. 类可以实现多个接口，若多个接口都有自己的构造器，则不好决定构造器链的调用次序C. 构造器是属于类自己的，不能继承。因为是纯虚的，接口不需要构造器。
-②在抽象类中 可以有构造方法。在抽象类中可以有构造方...
+        <div class="license-wrapper">
+            <p>Author：<a href="http://yoursite.com">Nyaxs</a>
+            <p>原文链接：<a href="http://yoursite.com/2020/07/14/Mybatis%E9%80%9F%E6%9F%A5/">http://yoursite.com/2020/07/14/Mybatis%E9%80%9F%E6%9F%A5/</a>
+            <p>发表日期：<a href="http://yoursite.com/2020/07/14/Mybatis%E9%80%9F%E6%9F%A5/">July 14th 2020, 3:20:51 pm</a>
+            <p>更新日期：<a href="http://yoursite.com/2020/07/14/Mybatis%E9%80%9F%E6%9F%A5/">July 14th 2020, 3:40:34 pm</a>
+            <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/13</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "java">java</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/07/09/Spring-%E5%B8%B8%E7%94%A8%E6%B3%A8%E8%A7%A3%E9%80%9F%E6%9F%A5/" >
-            
-                <span>Spring 常用注解速查</span>
-        </a>
-        <div class="abstract-content">
-            Spring 常用注解
-@RequestMapping
-@Slfj4
-
-
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/09</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "web">web</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "java">java</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "spring">spring</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "springboot">springboot</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/07/08/%E5%B8%B8%E8%A7%81%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" >
-            
-                <span>常见排序算法</span>
-        </a>
-        <div class="abstract-content">
-            常见排序算法
-冒泡排序package com.nyaxs.algorithm;
-
-import java.util.Arrays;
-/**
-
-@author nyaxs
-
-@version V1.0
-
-@Package com.nyaxs.algorithm
-
-@date 2020/6/28 17:21
-
-/public class BubbleSort {  public static void main(String[] args) {
-Integer[] b = {8,3,2,6,4,5,1,9};
-String[] s = {&quot;qwq&quot;,&quot;q&quo...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/08</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "java">java</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "排序">排序</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/07/07/%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%AE%97%E6%B3%95%E5%8F%8AJava%E4%B8%AD%E7%9A%84Random/" >
-            
-                <span>随机数算法及Java中的Random</span>
-        </a>
-        <div class="abstract-content">
-            电脑取随机数是什么原理，是真随机吗？首先，「真随机」也有不同的含义，若想要「真正的真随机」目测只能靠量子力学了。一般的所谓真随机当然不是指这种，而是指统计意义上的随机，也就是具备不确定性，可以被安全的用于金融等领域，下面说的也是这种。答案是，计算机系统可以产生统计意义上的真随机数。大部分程序和语言中的随机数，确实都只是伪随机。
-是由可确定的函数（常用线性同余），通过一个种子（常用时钟），产生的。这意味着：如果知道了种子，或者已经产生的随机数，都可能获得接下来随机数序列的信息（可预测性）。
-直观来想，计算机就是一种确定的，可预测的的设备：一行行的代码是固定的，一步步的算法是固定的，一个个与...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/07</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "java">java</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "随机数">随机数</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/07/06/%E8%AE%A4%E8%AF%86JVM%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%8C%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/" >
-            
-                <span>认识JVM（二），垃圾回收</span>
-        </a>
-        <div class="abstract-content">
-            
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/06</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "java">java</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "jvm">jvm</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/07/06/Java-Web-%E8%BF%90%E8%A1%8C%E7%9A%84%E5%9F%BA%E7%A1%80%E9%80%BB%E8%BE%91/" >
-            
-                <span>Java Web 运行的基础逻辑</span>
-        </a>
-        <div class="abstract-content">
-            很多人可能和我当初一样，把Servlet和太多东西联系起来。其实Servlet本身在Tomcat中是“非常被动”的一个角色，处理的事情也很简单。网络请求与响应，不是他的主要职责，它其实更偏向于业务代码。所谓的Request和Response是Tomcat传给它，用来处理请求和响应的工具，但它本身不处理这些。
-文章会比较长，但是看完会拔高你看待Servlet的视角。
-主要内容：
-Servlet的前世今生我所理解的JavaWeb三大组件如何编写一个Servlet
-Servlet的前世今生类似于Servlet是Server Applet（运行在服务端的小程序）等其他博文已经提过的内容，这里就不...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/06</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "web">web</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "java">java</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "servlet">servlet</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "tomcat">tomcat</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/07/06/%E4%BB%80%E4%B9%88%E6%98%AFServlet/" >
-            
-                <span>什么是Servlet</span>
-        </a>
-        <div class="abstract-content">
-            事实上，servlet就是一个Java接口，interface!打开idea，ctrl + shift + n，搜索servlet，就可以看到是一个只有5个方法的interface!
-
-
-所以，网络协议、http什么的，servlet根本不管！也管不着！那servlet是干嘛的？很简单，接口的作用是什么？规范呗！servlet接口定义的是一套处理网络请求的规范，所有实现servlet的类，都需要实现它那五个方法，其中最主要的是两个生命周期方法 init()和destroy()，还有一个处理请求的service()，也就是说，所有实现servlet接口的类，或者说，所有想要处理网络请求的类...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/06</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "web">web</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "java">java</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "servlet">servlet</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/07/04/%E8%AE%A4%E8%AF%86JVM%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%8CJava%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F/" >
-            
-                <span>认识JVM（一），Java内存区域</span>
-        </a>
-        <div class="abstract-content">
-            Java 内存区域详解写在前面 (常见面试题)基本问题拓展问题一 概述二 运行时数据区域2.1 程序计数器2.2 Java 虚拟机栈2.3 本地方法栈2.4 堆2.5 方法区2.5.1 方法区和永久代的关系2.5.2 常用参数2.5.3 为什么要将永久代 (PermGen) 替换为元空间 (MetaSpace) 呢?2.6 运行时常量池2.7 直接内存三 HotSpot 虚拟机对象探秘3.1 对象的创建Step1:类加载检查Step2:分配内存Step3:初始化零值Step4:设置对象头Step5:执行 init 方法3.2 对象的内存布局3.3 对象的访问定位四 重点补充内容4.1 S...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/04</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "java">java</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "jvm">jvm</a>
-    
-</div>
-            
-        </div>
-    </article>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2020/07/13/Java%E5%9F%BA%E7%A1%80%EF%BC%8C%E6%8E%A5%E5%8F%A3%E3%80%81%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/" title= "Java基础，接口、抽象类和构造函数">
+                    <div class="prevTitle">Java基础，接口、抽象类和构造函数</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- gitalk评论 -->
+
+    <!-- utteranc评论 -->
+
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -766,6 +556,24 @@ Servlet的前世今生类似于Servlet是Server Applet（运行在服务端的�
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#MyBatis运行过程"><span class="toc-number">1.</span> <span class="toc-text">MyBatis运行过程</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1407,6 +1215,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
