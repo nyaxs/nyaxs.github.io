@@ -20,27 +20,17 @@
     <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
     
     <meta name="description" content="">
-    <meta name="description" content="电脑取随机数是什么原理，是真随机吗？首先，「真随机」也有不同的含义，若想要「真正的真随机」目测只能靠量子力学了。一般的所谓真随机当然不是指这种，而是指统计意义上的随机，也就是具备不确定性，可以被安全的用于金融等领域，下面说的也是这种。答案是，计算机系统可以产生统计意义上的真随机数。大部分程序和语言中的随机数，确实都只是伪随机。 是由可确定的函数（常用线性同余），通过一个种子（常用时钟），产生的。这">
-<meta property="og:type" content="article">
-<meta property="og:title" content="随机数算法及Java中的Random">
-<meta property="og:url" content="http://yoursite.com/2020/07/07/%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%AE%97%E6%B3%95%E5%8F%8AJava%E4%B8%AD%E7%9A%84Random/index.html">
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Hello">
+<meta property="og:url" content="http://yoursite.com/tags/nginx/index.html">
 <meta property="og:site_name" content="Hello">
-<meta property="og:description" content="电脑取随机数是什么原理，是真随机吗？首先，「真随机」也有不同的含义，若想要「真正的真随机」目测只能靠量子力学了。一般的所谓真随机当然不是指这种，而是指统计意义上的随机，也就是具备不确定性，可以被安全的用于金融等领域，下面说的也是这种。答案是，计算机系统可以产生统计意义上的真随机数。大部分程序和语言中的随机数，确实都只是伪随机。 是由可确定的函数（常用线性同余），通过一个种子（常用时钟），产生的。这">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://s1.ax1x.com/2020/07/07/UF27CV.jpg">
-<meta property="og:image" content="https://s1.ax1x.com/2020/07/07/UFRRG6.png">
-<meta property="article:published_time" content="2020-07-07T01:36:32.000Z">
-<meta property="article:modified_time" content="2020-07-07T02:26:47.339Z">
 <meta property="article:author" content="Nyaxs">
-<meta property="article:tag" content="java">
-<meta property="article:tag" content="算法">
-<meta property="article:tag" content="随机数">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s1.ax1x.com/2020/07/07/UF27CV.jpg">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     
-    <title>随机数算法及Java中的Random · Nyaxs Product</title>
+    <title>Nyaxs Product</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -221,23 +211,12 @@
 <meta name="generator" content="Hexo 4.2.1"></head>
 
     
-        <body class="post-body">
-    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
-    
-    <div class="banner">
-            <div class="blog-title">
-                <a href="/" >Nyaxs Product</a>
-            </div>
-            <div class="post-title">
-                <a href="#" class="post-name">随机数算法及Java中的Random</a>
-            </div>
-    </div>
     
     <a class="home-link" href=/>Nyaxs Product</a>
 </header>
@@ -249,78 +228,24 @@
 
 
 
-
-height:50vh;
 ">
     
     <!-- 主页  -->
-    
-    
-    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(https://source.unsplash.com/random)"></div>
+    <div class="site-intro-img" style="background-image: url(/)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
-            
-            随机数算法及Java中的Random
-            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
-            
-            <!-- 404 -->
-            
         </p>
         <!-- 文章页meta -->
-        
-            <div class="post-intros">
-                <!-- 文章页标签  -->
-                
-                    <div class= post-intro-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "java">java</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "随机数">随机数</a>
-    
-</div>
-                
-                
-                    <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">3k</span>Reading time: <span class="post-count reading-time">11 min</span></span>
-                    </div>
-                
-                <div class="post-intro-meta">
-                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2020/07/07</span>
-                    
-                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
-                        <span class="iconfont-archer">&#xe602;</span>
-                        <span id="busuanzi_value_page_pv"></span>
-                    </span>
-                    
-                    <span class="shareWrapper">
-                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
-                        <span class="shareText">Share</span>
-                        <ul class="shareList">
-                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
-                                <div class="share-qrcode"></div>
-                            </li>
-                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
-                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
-                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
-                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
-                        </ul>
-                    </span>
-                </div>
-            </div>
         
     </div>
 </div>
@@ -421,122 +346,48 @@ height:50vh;
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main post-page">
-    <article class="article-entry">
-        <h3 id="电脑取随机数是什么原理，是真随机吗？"><a href="#电脑取随机数是什么原理，是真随机吗？" class="headerlink" title="电脑取随机数是什么原理，是真随机吗？"></a>电脑取随机数是什么原理，是真随机吗？</h3><h4 id="首先，「真随机」也有不同的含义，若想要「真正的真随机」目测只能靠量子力学了。一般的所谓真随机当然不是指这种，而是指统计意义上的随机，也就是具备不确定性，可以被安全的用于金融等领域，下面说的也是这种。"><a href="#首先，「真随机」也有不同的含义，若想要「真正的真随机」目测只能靠量子力学了。一般的所谓真随机当然不是指这种，而是指统计意义上的随机，也就是具备不确定性，可以被安全的用于金融等领域，下面说的也是这种。" class="headerlink" title="首先，「真随机」也有不同的含义，若想要「真正的真随机」目测只能靠量子力学了。一般的所谓真随机当然不是指这种，而是指统计意义上的随机，也就是具备不确定性，可以被安全的用于金融等领域，下面说的也是这种。"></a>首先，「真随机」也有不同的含义，若想要「真正的真随机」目测只能靠量子力学了。一般的所谓真随机当然不是指这种，而是指统计意义上的随机，也就是具备不确定性，可以被安全的用于金融等领域，下面说的也是这种。</h4><p>答案是，计算机系统可以产生统计意义上的真随机数。大部分程序和语言中的随机数，确实都只是伪随机。</p>
-<p>是由可确定的函数（常用线性同余），通过一个种子（常用时钟），产生的。这意味着：如果知道了种子，或者已经产生的随机数，都可能获得接下来随机数序列的信息（可预测性）。</p>
-<p>直观来想，计算机就是一种确定的，可预测的的设备：一行行的代码是固定的，一步步的算法是固定的，一个个与非门是固定的。通过这些固定的东西自身产生真随机，当然不可能。</p>
-<p>但是，我们或许可以迂回一下……如果把软件，代码，算法想象成一个封闭的系统，那么也许可以引入系统以外的变量？比如说，硬件？</p>
-<p>一个典型的例子是 Unix 内核中的随机数发生器（/dev/random），理论上它能产生真随机。即这个随机数的生成，独立于生成函数，这时我们说这个随机数发生器是非确定的。具体来讲，Unix 维护了一个熵池，不断收集非确定性的设备事件，即机器运行环境中产生的硬件噪音，来作为种子。比如说，时钟，IO 请求的响应时间，特定硬件中断的时间间隔，键盘敲击速度，鼠标位置变化，甚至周围的电磁波等等……直观地讲，你每按一次键盘，动一下鼠标，邻居家 wifi 信号强度变化，磁盘写入速度等等信号，都可能被用来生成随机数。更具体的，内核提供了向熵池填充数据的接口，比如鼠标的大概就长成这样：void add_mouse_randomness(__u32 mouse_data) 内核子系统和驱动调用这个函数，把鼠标的位置和中断间隔时间作为噪音源填充进熵池。</p>
-<p>所以，结论是，程序和算法本身不能产生真随机，但是我们想办法可以迂回产生统计意义上的真随机。</p>
-<h4 id="生产伪随机数的原理是非常非常简单的："><a href="#生产伪随机数的原理是非常非常简单的：" class="headerlink" title="生产伪随机数的原理是非常非常简单的："></a>生产伪随机数的原理是非常非常简单的：</h4><p>第一步：假设我们手头已经有一串数字，我们称它们为种子。</p>
-<p>对这些种子用递归法，“随机地(其实并不是)”生成一连串0到某个自然数N之间的自然数。</p>
-<p>第二步：把这些随机生成的自然数转换成0到1之间的实数 (比如通过除以N来得到)。如果这样生成的伪随机数能够通过许多不同的统计检验，达到了“以假乱真”的程度，我们就厚脸皮地认为自家程序已经聪明地会生成[0,1]上均匀分布的独立样本啦！</p>
-<p>第三步：利用这串“从零到一均匀分布的随机数”，把它们用某些算法来转换成其他分布的随机数。反正大体上就是遵循上面这三步，下面具体列举一下每一步里的比较常见的方法。</p>
-<p>其中第一步里，比较著名的有:线性同余法(比如RANDU) （但是如果是multiplicativ的话，在n维空间里的点都在有限个超平面里，这些伪随机数的独立性不佳）</p>
-<p>梅森旋转法（循环周期长，速度快）平方取中法（速度快，但是很容易生成循环周期短的数列，还有很多不动点）</p>
-<p>Lagged Fibonacci generator（独立性不好）检验这些伪随机数的方法就更多了，比如卡方Goodness-of-fit检验，QQ图, Wald-Wolfowitz游程检验，Diehard tests，NIST tests suite 和 TestU01 等等等等。</p>
-<p>第三步里面，利用均匀分布来生成其他分布的方法也有很多。常见的有： 逆函数法Inverse transform sampling（为了提高速度，会用数值方法取逆函数，这样做的缺点是会产生误差）Von Neumann舍选法Rejection samplin（提高其效率的关键是讲其中的常数C取得越小越好）Box Muller算法（Box 生成正太分布）Marsaglia polar method (对Box Muller算法的改进，不需要用到sin和cos函数)Marsaglia-Bray method（生成正态分布，97%的情况下无需用到复杂函数）以及 Ziggurat algorithm (其中用到了 Marsaglia polar method 和舍选法，优化计算过程中用到其他函数和随机数的次数)。</p>
-<h4 id="电脑物理方法取得随机数（种子）："><a href="#电脑物理方法取得随机数（种子）：" class="headerlink" title="电脑物理方法取得随机数（种子）："></a>电脑物理方法取得随机数（种子）：</h4><ol>
-<li>利用总线统计，比如数据总线上每个时刻传输的数据量的平方除100等等</li>
-<li>利用高精度时钟的抖动，比如取高精度时钟的最后几位小数，那个会抖动</li>
-<li>探测网卡上的数据流，可以是流量，也可以比如偶数的个数等等。</li>
-<li>CPU温度探测器的抖动，最后几位小数会抖动</li>
-<li>磁盘转速探测抖动</li>
-<li>磁盘温度抖动</li>
-<li>显卡缓存的统计值</li>
-</ol>
-<h4 id="线性同余法"><a href="#线性同余法" class="headerlink" title="线性同余法"></a>线性同余法</h4><p><img src="https://s1.ax1x.com/2020/07/07/UF27CV.jpg" alt="UF27CV.jpg"></p>
-<p><a href="https://imgchr.com/i/UFRRG6" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/07/07/UFRRG6.png" alt="UFRRG6.png"></a></p>
-<p>对应的其他条件，同样是为了确保整个序列周期为M。详细推导过于复杂，有想要了解的，建议参考这篇论文：</p>
-<p><a href="https://www.ixueshu.com/document/2c3ade6685fc880b.html" target="_blank" rel="noopener">混合线性同余发生器的周期分析</a><br>​</p>
-<p>回到最初的疑问，线性同余法是如何做到均匀分布的。从上面我们可以得知，通过特定条件的参数选择，我们可以构造一个序列周期为M，且M的周期中各数字只出现一次，因此在整个序列中，各数字出现的频率是相同的，也就符合了均匀分布。</p>
-<h3 id="Java-中的-Random-类"><a href="#Java-中的-Random-类" class="headerlink" title="Java 中的 Random 类"></a>Java 中的 Random 类</h3><p>Random类中实现的随机算法是伪随机，也就是有规则的随机。在进行随机时，随机算法的起源数字称为种子数(seed)，在种子数的基础上进行一定的变换，从而产生需要的随机数字。相同种子数的Random对象，相同次数生成的随机数字是完全相同的。也就是说，两个种子数相同的Random对象，第一次生成的随机数字完全相同，第二次生成的随机数字也完全相同，这点在生成多个随机数字时需要特别注意。下面分三部分来讲解一下Random类的使用，以及如何生成指定区间的随机数组以及实现程序中要求的几率。</p>
-<p>一、Random类两个构造方法：<br>1、public Random()：该构造方法使用一个和当前系统时间对应的相对时间有关的数字作为种子数，然后使用这个种子数构造Random对象。</p>
-<p>2、public Random(long seed)：该构造方法可以通过制定一个种子数进行创建。</p>
-<p>示例代码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Random r = <span class="keyword">new</span> Random();</span><br><span class="line">Random r1 = <span class="keyword">new</span> Random(<span class="number">10</span>);</span><br></pre></td></tr></table></figure>
-
-<p>再次强调：种子数只是随机算法的起源数字，和生成的随机数字的区间无关。</p>
-<p>二、Random类中的常用5种方法：<br>Random类中各方法生成的随机数字都是均匀分布的，也就是说区间内部的数字生成的几率是均等的。</p>
-<p>1、public boolean nextBoolean()：</p>
-<p>该方法的作用是生成一个随机的boolean值，生成true和false的值几率相等，也就是都是50%的几率。</p>
-<p>2、public double nextDouble()：</p>
-<p>该方法的作用是生成一个随机的double值，数值介于[0,1.0)之间。</p>
-<p>3、public int nextInt()：</p>
-<p>该方法的作用是生成一个随机的int值，该值介于int的区间，也就是-231到231-1之间。</p>
-<p>如果需要生成指定区间的int值，则需要进行一定的数学变换，具体可以参看下面的使用示例中的代码。</p>
-<p>4、public int nextInt(int n)：</p>
-<p>该方法的作用是生成一个随机的int值，该值介于[0,n)的区间，也就是0到n之间的随机int值，</p>
-<p>包含0而不包含n。如果想生成指定区间的int值，也需要进行一定的数学变换，具体可以参看下面的使用示例中的代码。</p>
-<p>5、public void setSeed(long seed)：</p>
-<p>该方法的作用是重新设置Random对象中的种子数。</p>
-<p>设置完种子数以后的Random对象和相同种子数使用new关键字创建出的Random对象相同。</p>
-<p>三、常见使用示例（重点）：<br>首先，初始化一个对象：Random r = new Random();<br>1、生成[0,1.0)区间的小数：<br>double d1 = r.nextDouble();</p>
-<p>2、生成[0,5.0)区间的小数：将该区间扩大5倍即是要求的区间。<br>double d1 = r.nextDouble();</p>
-<p>3、生成[1,2.5)区间的小数：只需要首先生成[0,1.5)区间的随机数字，然后将生成的随机数区间加1即可。<br>double d3 = r.nextDouble() * 1.5 + 1;</p>
-<p>4、生成任意整数：直接使用nextInt方法即可。<br>int n1 = r.nextInt();</p>
-<p>5、生成[0,10)区间的整数：<br>int n2 = r.nextInt(10);<br>n2 = Math.abs(r.nextInt() % 10);<br>6、生成[-3,15)区间的整数：<br>int n4 = r.nextInt(18) - 3;</p>
-<p>7、几率实现：<br>在前面的方法介绍中，nextInt(int n)方法中生成的数字是均匀的，也就是说该区间内部的每个数字生成的几率是相同的。<br>比如生成一个[0,100)区间的随机整数，则每个数字生成的几率应该是相同的，而且由于该区间中总计有100个整数，<br>所以每个数字的几率都是1%。按照这个理论，可以实现程序中的几率问题。</p>
-<p>题目：如何写出随机生成一个整数，该整数以55%的几率生成1，以40%的几率生成2，以5%的几率生成3，Java代码？<br>int n5 = r.nextInt(100);<br>int m; //结果数字<br>if(n5 &lt; 55){ //55个数字的区间，55%的几率<br>    m = 1;<br>}else if(n5 &lt; 95){//[55,95)，40个数字的区间，40%的几率<br>    m = 2;<br>}else{<br>    m = 3;<br>}</p>
-<p>分析：因为每个数字的几率都是1%，则任意55个数字的区间的几率就是55%，为了代码方便书写，这里使用[0,55)区间的所有整数。原理都一样。<br>当然，这里的代码可以简化，因为几率都是5%的倍数，所以只要以5%为基础来控制几率即可，下面是简化的代码实现：<br>int n6 = r.nextInt(20);<br>int m1;<br>if(n6 &lt; 11){<br>    m1 = 1;<br>}else if(n6 &lt; 19){<br>    m1 = 2;<br>}else{<br>    m1 = 3;<br>}</p>
-<p>四、常见问题：<br>1、相同种子数Random对象问题：<br>测试代码：<br>import java.io.*;<br>import java.util.Random;<br>class test<br>{<br>    public static void main (String[] args) throws java.lang.Exception<br>    {<br>         Random r1 = new Random(10);<br>         Random r2 = new Random(10);<br>         for(int i = 0;i &lt; 2;i++){<br>             System.out.println(r1.nextInt());<br>             System.out.println(r2.nextInt());<br>         }<br>    }<br>}</p>
-<p>输出结果：完全相同！<br>-1157793070<br>-1157793070<br>1913984760<br>1913984760</p>
-<p>分析：在该代码中，对象r1和r2使用的种子数都是10，则这两个对象相同次数生成的随机数是完全相同的。</p>
-<p>如果想避免出现随机数字相同的情况，则需要注意，无论项目中需要生成多少个随机数字，都只使用一个Random对象即可。</p>
-<p>2、关于Math类中的random方法：（代码习惯）</p>
-<p>其实在Math类中也有一个random方法，该random方法的工作是生成一个[0,1.0)区间的随机小数。</p>
-<p>通过阅读Math类的源代码可以发现，Math类中的random方法就是直接调用Random类中的nextDouble方法实现的。</p>
-<p>只是random方法的调用比较简单，所以很多程序员都习惯使用Math类的random方法来生成随机数字。</p>
-
-    </article>
-    <!-- license  -->
+            <main class="main index-page">
     
-        <div class="license-wrapper">
-            <p>Author：<a href="http://yoursite.com">Nyaxs</a>
-            <p>原文链接：<a href="http://yoursite.com/2020/07/07/%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%AE%97%E6%B3%95%E5%8F%8AJava%E4%B8%AD%E7%9A%84Random/">http://yoursite.com/2020/07/07/%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%AE%97%E6%B3%95%E5%8F%8AJava%E4%B8%AD%E7%9A%84Random/</a>
-            <p>发表日期：<a href="http://yoursite.com/2020/07/07/%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%AE%97%E6%B3%95%E5%8F%8AJava%E4%B8%AD%E7%9A%84Random/">July 7th 2020, 9:36:32 am</a>
-            <p>更新日期：<a href="http://yoursite.com/2020/07/07/%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%AE%97%E6%B3%95%E5%8F%8AJava%E4%B8%AD%E7%9A%84Random/">July 7th 2020, 10:26:47 am</a>
-            <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2020/07/16/%E8%AE%A4%E8%AF%86Nginx/" >
+            
+                <span>认识Nginx</span>
+        </a>
+        <div class="abstract-content">
+            Nginx是什么？
+“Nginx 是一款轻量级的 HTTP 服务器，采用事件驱动的异步非阻塞处理方式框架，这让其具有极好的 IO 性能，时常用于服务端的反向代理和负载均衡。”
+这是大多数开发者对 Nginx 的定义。（什么？听不懂，反向代理、负载均衡这都什么鬼？那么请稍安勿躁，请君带着疑问往下看）Nginx 是一款 http 服务器 （或叫web服务器）。它是由俄罗斯人 伊戈尔·赛索耶夫为俄罗斯访问量第二的 Rambler.ru 站点开发的，并于2004年首次公开发布的。
+web服务器：负责处理和响应用户请求，一般也称为http服务器，如 Apache、IIS、Nginx应用服务器：存放...
         </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/16</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "web">web</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "http">http</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "nginx">nginx</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "server">server</a>
+    
+</div>
+            
+        </div>
+    </article>
     
     <!-- paginator  -->
-    <ul class="post-paginator">
-        <li class="next">
-            
-                <div class="nextSlogan">Next Post</div>
-                <a href= "/2020/07/08/MyBatis%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6/" title= "MyBatis缓存机制">
-                    <div class="nextTitle">MyBatis缓存机制</div>
-                </a>
-            
-        </li>
-        <li class="previous">
-            
-                <div class="prevSlogan">Previous Post</div>
-                <a href= "/2020/07/06/%E8%AE%A4%E8%AF%86Docker/" title= "认识Docker">
-                    <div class="prevTitle">认识Docker</div>
-                </a>
-            
-        </li>
-    </ul>
-    <!-- 评论插件 -->
-    <!-- 来必力City版安装代码 -->
-
-<!-- City版安装代码已完成 -->
     
-    
-    <!-- gitalk评论 -->
-
-    <!-- utteranc评论 -->
-
-    <!-- partial('_partial/comment/changyan') -->
-    <!--PC版-->
-
-
-    
-    
-
-    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -628,24 +479,6 @@ height:50vh;
 </footer>
     </div>
     <!-- toc -->
-    
-    <div class="toc-wrapper" style=
-    
-
-
-
-
-
-
-
-top:50vh;
-
-    >
-        <div class="toc-catalog">
-            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
-        </div>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#电脑取随机数是什么原理，是真随机吗？"><span class="toc-number">1.</span> <span class="toc-text">电脑取随机数是什么原理，是真随机吗？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#首先，「真随机」也有不同的含义，若想要「真正的真随机」目测只能靠量子力学了。一般的所谓真随机当然不是指这种，而是指统计意义上的随机，也就是具备不确定性，可以被安全的用于金融等领域，下面说的也是这种。"><span class="toc-number">1.1.</span> <span class="toc-text">首先，「真随机」也有不同的含义，若想要「真正的真随机」目测只能靠量子力学了。一般的所谓真随机当然不是指这种，而是指统计意义上的随机，也就是具备不确定性，可以被安全的用于金融等领域，下面说的也是这种。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#生产伪随机数的原理是非常非常简单的："><span class="toc-number">1.2.</span> <span class="toc-text">生产伪随机数的原理是非常非常简单的：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#电脑物理方法取得随机数（种子）："><span class="toc-number">1.3.</span> <span class="toc-text">电脑物理方法取得随机数（种子）：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#线性同余法"><span class="toc-number">1.4.</span> <span class="toc-text">线性同余法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java-中的-Random-类"><span class="toc-number">2.</span> <span class="toc-text">Java 中的 Random 类</span></a></li></ol>
-    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1349,8 +1182,6 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
-    
-        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
