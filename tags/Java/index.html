@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta property="og:type" content="website">
 <meta property="og:title" content="Hello">
-<meta property="og:url" content="http://yoursite.com/tags/java/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/Java/index.html">
 <meta property="og:site_name" content="Hello">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="Nyaxs">
@@ -354,43 +354,27 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2020/07/14/Mybatis%E9%80%9F%E6%9F%A5/" >
+        <a class="abstract-title" href = "/2020/07/02/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E8%83%BD%E5%88%9B%E5%BB%BA%E6%B3%9B%E5%9E%8B%E6%95%B0%E7%BB%84/" >
             
-                <span>Mybatis速查</span>
+                <span>为什么不能创建泛型数组</span>
         </a>
         <div class="abstract-content">
-            1、MyBatis运行过程
-SqlSessionFactoryBuilder读取XML配置文件或者Configuration类实例
+            为什么不能创建泛型数组Situation我在将排序算法改造成泛型方法时，试图创建一个新的泛型数组。却出现编译错误提示…
+123T[] b = new T[a.length];//Type parameter 'T' cannot be instantiated directly
 
-–&gt;
-
-SqlSessionFactoryBuilder根据配置创建SqlSessionFactory实例
-
-–&gt;
-
-通过SqlSessionFactory获取SqlSession，SqlSession提供数据库执行SQL命令所有的所需方法
-
-–&gt;
-
-执行已映射的SQL语句
-
-2、#{}和${}的区别是什么？
-${}是 Properties 文件中的变量占位符，它可以用于标签属性值和 sql 内部，属于静态文本替换，比如${driver}...
+分析在Java中，数组必须明确知道内部元素的类型，而且编译器会”记住“这个类型，每次往数组里插入新元素都会进行类型检查，不匹配会抛出java.lang.ArrayStoreException错误。如果试图直接创建泛型数组，写成这样：
+1HashMap&lt;Integer&gt; map = new HashM...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/14</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/02</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "web">web</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "java">java</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "mybatis">mybatis</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Java">Java</a>
     
 </div>
             
@@ -403,328 +387,31 @@ ${}是 Properties 文件中的变量占位符，它可以用于标签属性值�
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2020/07/13/Java%E5%9F%BA%E7%A1%80%EF%BC%8C%E6%8E%A5%E5%8F%A3%E3%80%81%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/" >
+        <a class="abstract-title" href = "/2020/07/02/Integer%E5%92%8Cint%E7%9A%84%E5%8C%BA%E5%88%AB/" >
             
-                <span>Java基础，接口、抽象类和构造函数</span>
+                <span>Integer和int的区别</span>
         </a>
         <div class="abstract-content">
-            2.问题描述：Java中抽象类和接口中有构造方法吗?3.问题解答：（1）Java中抽象类和接口中有构造方法吗?①在接口中 不可以有构造方法在接口里写入构造方法时，编译器提示：Interfaces cannot have constructors。A. 构造方法用于初始化成员变量，但是接口成员变量是常量,无需修改。接口是一种规范，被调用时，主要关注的是里边的方法，而方法是不需要初始化的，B. 类可以实现多个接口，若多个接口都有自己的构造器，则不好决定构造器链的调用次序C. 构造器是属于类自己的，不能继承。因为是纯虚的，接口不需要构造器。
-②在抽象类中 可以有构造方法。在抽象类中可以有构造方...
+            Integer 和 int 的区别
+Integer是int的包装类，int则是java的一种基本数据类型
+Integer变量必须实例化后才能使用，而int变量不需要
+Integer实际是对象的引用，当new一个Integer时，实际上是生成一个指针指向此对象；而int则是直接存储数据值
+Integer的默认值是null，int的默认值是0
+
+关于Integer和int的比较
+由于Integer变量实际上是对一个Integer对象的引用，所以两个通过new生成的Integer变量永远是不相等的（因为new生成的是两个对象，其内存地址不同）。
+Integer i = new Integer(...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/13</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/02</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "java">java</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/07/11/Springboot%E9%80%9F%E6%9F%A5%EF%BC%8C%E5%89%8D%E5%90%8E%E7%AB%AF%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92/" >
-            
-                <span>Springboot速查，前后端参数传递</span>
-        </a>
-        <div class="abstract-content">
-            Spring Boot 前后端传值写在前面：
-前端向后台传递的参数形式无非就这几种：
-
-请求参数路径传递（也就是通过URL携带数据，后台从URL中获取数据。当你观察URL的时候，你会发现URL中有很多带？的数据，通常情况下，这种数据传递方式就属于请求参数路径传递。当然，请求参数；路径传递不止这一种）
-Body参数（通俗讲就是前端向后端传递Json数据，那么啥叫Json数据呢，你可以将他理解为类属性以及值组成的Kay-Value对、类对象实体或者类对象链表等结构化数据）
-请求头参数
-Cookie
-
-后台向前端传递数据更为简单：
-
-模板（可以理解为一个页面，但是这种方式将前后端混在一起，不符...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/11</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "java">java</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "springboot">springboot</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "前端">前端</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/07/09/Spring-%E5%B8%B8%E7%94%A8%E6%B3%A8%E8%A7%A3%E9%80%9F%E6%9F%A5/" >
-            
-                <span>Spring 常用注解速查</span>
-        </a>
-        <div class="abstract-content">
-            Spring 常用注解
-@RequestMapping
-@Slfj4
-
-
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/09</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "web">web</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "java">java</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "spring">spring</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "springboot">springboot</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/07/08/%E5%B8%B8%E8%A7%81%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" >
-            
-                <span>常见排序算法</span>
-        </a>
-        <div class="abstract-content">
-            常见排序算法
-冒泡排序package com.nyaxs.algorithm;
-
-import java.util.Arrays;
-/**
-
-@author nyaxs
-
-@version V1.0
-
-@Package com.nyaxs.algorithm
-
-@date 2020/6/28 17:21
-
-/public class BubbleSort {  public static void main(String[] args) {
-Integer[] b = {8,3,2,6,4,5,1,9};
-String[] s = {&quot;qwq&quot;,&quot;q&quo...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/08</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "java">java</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "排序">排序</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/07/07/%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%AE%97%E6%B3%95%E5%8F%8AJava%E4%B8%AD%E7%9A%84Random/" >
-            
-                <span>随机数算法及Java中的Random</span>
-        </a>
-        <div class="abstract-content">
-            电脑取随机数是什么原理，是真随机吗？首先，「真随机」也有不同的含义，若想要「真正的真随机」目测只能靠量子力学了。一般的所谓真随机当然不是指这种，而是指统计意义上的随机，也就是具备不确定性，可以被安全的用于金融等领域，下面说的也是这种。答案是，计算机系统可以产生统计意义上的真随机数。大部分程序和语言中的随机数，确实都只是伪随机。
-是由可确定的函数（常用线性同余），通过一个种子（常用时钟），产生的。这意味着：如果知道了种子，或者已经产生的随机数，都可能获得接下来随机数序列的信息（可预测性）。
-直观来想，计算机就是一种确定的，可预测的的设备：一行行的代码是固定的，一步步的算法是固定的，一个个与...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/07</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "java">java</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "随机数">随机数</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/07/06/%E8%AE%A4%E8%AF%86JVM%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%8C%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/" >
-            
-                <span>认识JVM（二），垃圾回收</span>
-        </a>
-        <div class="abstract-content">
-            
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/06</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "java">java</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "jvm">jvm</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/07/06/Java-Web-%E8%BF%90%E8%A1%8C%E7%9A%84%E5%9F%BA%E7%A1%80%E9%80%BB%E8%BE%91/" >
-            
-                <span>Java Web 运行的基础逻辑</span>
-        </a>
-        <div class="abstract-content">
-            很多人可能和我当初一样，把Servlet和太多东西联系起来。其实Servlet本身在Tomcat中是“非常被动”的一个角色，处理的事情也很简单。网络请求与响应，不是他的主要职责，它其实更偏向于业务代码。所谓的Request和Response是Tomcat传给它，用来处理请求和响应的工具，但它本身不处理这些。
-文章会比较长，但是看完会拔高你看待Servlet的视角。
-主要内容：
-Servlet的前世今生我所理解的JavaWeb三大组件如何编写一个Servlet
-Servlet的前世今生类似于Servlet是Server Applet（运行在服务端的小程序）等其他博文已经提过的内容，这里就不...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/06</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "web">web</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "java">java</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "servlet">servlet</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "tomcat">tomcat</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/07/06/%E4%BB%80%E4%B9%88%E6%98%AFServlet/" >
-            
-                <span>什么是Servlet</span>
-        </a>
-        <div class="abstract-content">
-            事实上，servlet就是一个Java接口，interface!打开idea，ctrl + shift + n，搜索servlet，就可以看到是一个只有5个方法的interface!
-
-
-所以，网络协议、http什么的，servlet根本不管！也管不着！那servlet是干嘛的？很简单，接口的作用是什么？规范呗！servlet接口定义的是一套处理网络请求的规范，所有实现servlet的类，都需要实现它那五个方法，其中最主要的是两个生命周期方法 init()和destroy()，还有一个处理请求的service()，也就是说，所有实现servlet接口的类，或者说，所有想要处理网络请求的类...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/06</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "web">web</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "java">java</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "servlet">servlet</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/07/04/%E8%AE%A4%E8%AF%86JVM%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%8CJava%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F/" >
-            
-                <span>认识JVM（一），Java内存区域</span>
-        </a>
-        <div class="abstract-content">
-            Java 内存区域详解写在前面 (常见面试题)基本问题拓展问题一 概述二 运行时数据区域2.1 程序计数器2.2 Java 虚拟机栈2.3 本地方法栈2.4 堆2.5 方法区2.5.1 方法区和永久代的关系2.5.2 常用参数2.5.3 为什么要将永久代 (PermGen) 替换为元空间 (MetaSpace) 呢?2.6 运行时常量池2.7 直接内存三 HotSpot 虚拟机对象探秘3.1 对象的创建Step1:类加载检查Step2:分配内存Step3:初始化零值Step4:设置对象头Step5:执行 init 方法3.2 对象的内存布局3.3 对象的访问定位四 重点补充内容4.1 S...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/04</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "java">java</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "jvm">jvm</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Java">Java</a>
     
 </div>
             
@@ -1209,9 +896,20 @@ Servlet的前世今生类似于Servlet是Server Applet（运行在服务端的�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 30
+        Total : 31
         </div>
         <!-- search  -->
         
@@ -1224,6 +922,11 @@ Servlet的前世今生类似于Servlet是Server Applet（运行在服务端的�
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/16</span><a class="archive-post-title" href= "/2020/07/16/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83%E4%B8%8E%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/" >数据库设计规范与最佳实践</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1262,12 +965,282 @@ Servlet的前世今生类似于Servlet是Server Applet（运行在服务端的�
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">07/11</span><a class="archive-post-title" href= "/2020/07/11/Springboot%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%EF%BC%88%E4%B8%80%EF%BC%89/" >Springboot常见问题（一）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">07/11</span><a class="archive-post-title" href= "/2020/07/11/Springboot%E9%80%9F%E6%9F%A5%EF%BC%8C%E5%89%8D%E5%90%8E%E7%AB%AF%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92/" >Springboot速查，前后端参数传递</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/11</span><a class="archive-post-title" href= "/2020/07/11/Springboot%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%EF%BC%88%E4%B8%80%EF%BC%89/" >Springboot常见问题（一）</a>
+            <span class="archive-post-date">07/09</span><a class="archive-post-title" href= "/2020/07/09/%E8%AE%A4%E8%AF%86%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" >认识计算机网络</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/09</span><a class="archive-post-title" href= "/2020/07/09/Spring-%E5%B8%B8%E7%94%A8%E6%B3%A8%E8%A7%A3%E9%80%9F%E6%9F%A5/" >Spring 常用注解速查</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/08</span><a class="archive-post-title" href= "/2020/07/08/UML%E5%9B%BE%E9%80%9F%E6%9F%A5/" >UML图速查</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/08</span><a class="archive-post-title" href= "/2020/07/08/MyBatis%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6/" >MyBatis缓存机制</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/08</span><a class="archive-post-title" href= "/2020/07/08/%E5%B8%B8%E8%A7%81%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" >常见排序算法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/07</span><a class="archive-post-title" href= "/2020/07/07/%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%AE%97%E6%B3%95%E5%8F%8AJava%E4%B8%AD%E7%9A%84Random/" >随机数算法及Java中的Random</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/04</span><a class="archive-post-title" href= "/2020/07/04/%E8%AE%A4%E8%AF%86JVM%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%8CJava%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F/" >认识JVM（一），Java内存区域</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/07/02/hello-world/" >Hello World</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/06</span><a class="archive-post-title" href= "/2020/07/06/%E5%90%84%E7%A7%8D%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99%E5%AD%98%E6%A1%A3/" >各种工具网站存档</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/06</span><a class="archive-post-title" href= "/2020/07/06/%E8%AE%A4%E8%AF%86Docker/" >认识Docker</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/06</span><a class="archive-post-title" href= "/2020/07/06/Java-Web-%E8%BF%90%E8%A1%8C%E7%9A%84%E5%9F%BA%E7%A1%80%E9%80%BB%E8%BE%91/" >Java Web 运行的基础逻辑</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/06</span><a class="archive-post-title" href= "/2020/07/06/%E8%AE%A4%E8%AF%86JVM%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%8C%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/" >认识JVM（二），垃圾回收</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/06</span><a class="archive-post-title" href= "/2020/07/06/SQL%E5%B8%B8%E7%94%A8%E8%AF%AD%E5%8F%A5%E9%80%9F%E6%9F%A5/" >SQL常用语句速查</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/06</span><a class="archive-post-title" href= "/2020/07/06/%E4%BB%80%E4%B9%88%E6%98%AFServlet/" >什么是Servlet</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/04</span><a class="archive-post-title" href= "/2020/07/04/REST%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%8C%E5%A6%82%E4%BD%95%E5%BA%94%E7%94%A8/" >REST是什么，如何应用</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/04</span><a class="archive-post-title" href= "/2020/07/04/%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F/" >如何解决跨域</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/04</span><a class="archive-post-title" href= "/2020/07/04/%E8%AE%A4%E8%AF%86%E5%BE%AE%E6%9C%8D%E5%8A%A1%EF%BC%88%E4%B8%80%EF%BC%89%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%9A%84%E7%89%B9%E6%80%A7/" >认识微服务（一）微服务的特性</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/03</span><a class="archive-post-title" href= "/2020/07/03/Linux%E5%91%BD%E4%BB%A4%E5%9F%BA%E7%A1%80/" >Linux命令基础</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/03</span><a class="archive-post-title" href= "/2020/07/03/%E8%BF%87%E6%BB%A4%E5%99%A8-Filter-%E5%92%8C%E6%8B%A6%E6%88%AA%E5%99%A8-Interceptor-%E7%9A%84%E5%8C%BA%E5%88%AB/" >过滤器(Filter)和拦截器(Interceptor)的区别</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/02</span><a class="archive-post-title" href= "/2020/07/02/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E8%83%BD%E5%88%9B%E5%BB%BA%E6%B3%9B%E5%9E%8B%E6%95%B0%E7%BB%84/" >为什么不能创建泛型数组</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/02</span><a class="archive-post-title" href= "/2020/07/02/Integer%E5%92%8Cint%E7%9A%84%E5%8C%BA%E5%88%AB/" >Integer和int的区别</a>
+        </li>
+    
+    </div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="Java"><span class="iconfont-archer">&#xe606;</span>Java</span>
+    
+        <span class="sidebar-tag-name" data-tags="web"><span class="iconfont-archer">&#xe606;</span>web</span>
+    
+        <span class="sidebar-tag-name" data-tags="linux"><span class="iconfont-archer">&#xe606;</span>linux</span>
+    
+        <span class="sidebar-tag-name" data-tags="微服务"><span class="iconfont-archer">&#xe606;</span>微服务</span>
+    
+        <span class="sidebar-tag-name" data-tags="js"><span class="iconfont-archer">&#xe606;</span>js</span>
+    
+        <span class="sidebar-tag-name" data-tags="sql"><span class="iconfont-archer">&#xe606;</span>sql</span>
+    
+        <span class="sidebar-tag-name" data-tags="mysql"><span class="iconfont-archer">&#xe606;</span>mysql</span>
+    
+        <span class="sidebar-tag-name" data-tags="rest"><span class="iconfont-archer">&#xe606;</span>rest</span>
+    
+        <span class="sidebar-tag-name" data-tags="restful"><span class="iconfont-archer">&#xe606;</span>restful</span>
+    
+        <span class="sidebar-tag-name" data-tags="设计规范"><span class="iconfont-archer">&#xe606;</span>设计规范</span>
+    
+        <span class="sidebar-tag-name" data-tags="java"><span class="iconfont-archer">&#xe606;</span>java</span>
+    
+        <span class="sidebar-tag-name" data-tags="servlet"><span class="iconfont-archer">&#xe606;</span>servlet</span>
+    
+        <span class="sidebar-tag-name" data-tags="tomcat"><span class="iconfont-archer">&#xe606;</span>tomcat</span>
+    
+        <span class="sidebar-tag-name" data-tags="工具"><span class="iconfont-archer">&#xe606;</span>工具</span>
+    
+        <span class="sidebar-tag-name" data-tags="网站"><span class="iconfont-archer">&#xe606;</span>网站</span>
+    
+        <span class="sidebar-tag-name" data-tags="收藏"><span class="iconfont-archer">&#xe606;</span>收藏</span>
+    
+        <span class="sidebar-tag-name" data-tags="jvm"><span class="iconfont-archer">&#xe606;</span>jvm</span>
+    
+        <span class="sidebar-tag-name" data-tags="算法"><span class="iconfont-archer">&#xe606;</span>算法</span>
+    
+        <span class="sidebar-tag-name" data-tags="随机数"><span class="iconfont-archer">&#xe606;</span>随机数</span>
+    
+        <span class="sidebar-tag-name" data-tags="docker"><span class="iconfont-archer">&#xe606;</span>docker</span>
+    
+        <span class="sidebar-tag-name" data-tags="mybatis"><span class="iconfont-archer">&#xe606;</span>mybatis</span>
+    
+        <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
+    
+        <span class="sidebar-tag-name" data-tags="spring"><span class="iconfont-archer">&#xe606;</span>spring</span>
+    
+        <span class="sidebar-tag-name" data-tags="springboot"><span class="iconfont-archer">&#xe606;</span>springboot</span>
+    
+        <span class="sidebar-tag-name" data-tags="net"><span class="iconfont-archer">&#xe606;</span>net</span>
+    
+        <span class="sidebar-tag-name" data-tags="http"><span class="iconfont-archer">&#xe606;</span>http</span>
+    
+        <span class="sidebar-tag-name" data-tags="tcp/ip"><span class="iconfont-archer">&#xe606;</span>tcp/ip</span>
+    
+        <span class="sidebar-tag-name" data-tags="database"><span class="iconfont-archer">&#xe606;</span>database</span>
+    
+        <span class="sidebar-tag-name" data-tags="前端"><span class="iconfont-archer">&#xe606;</span>前端</span>
+    
+        <span class="sidebar-tag-name" data-tags="nginx"><span class="iconfont-archer">&#xe606;</span>nginx</span>
+    
+        <span class="sidebar-tag-name" data-tags="server"><span class="iconfont-archer">&#xe606;</span>server</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br/>
+    1、请确保node版本大于6.2<br/>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+        <span class="sidebar-category-name" data-categories="技术"><span class="iconfont-archer">&#xe60a;</span>技术</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "Nyaxs"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+     
+    </body>
+</html>
+
+
+ class="archive-post-date">07/11</span><a class="archive-post-title" href= "/2020/07/11/Springboot%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%EF%BC%88%E4%B8%80%EF%BC%89/" >Springboot常见问题（一）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/11</span><a class="archive-post-title" href= "/2020/07/11/Springboot%E9%80%9F%E6%9F%A5%EF%BC%8C%E5%89%8D%E5%90%8E%E7%AB%AF%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92/" >Springboot速查，前后端参数传递</a>
         </li>
     
     
